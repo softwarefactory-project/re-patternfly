@@ -1,0 +1,16 @@
+{
+  "name": "@softwarefactory-project/re-patternfly",
+  "reason": {
+    "react-jsx": 3
+  },
+  "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
+  "package-specs": [{
+    "module": "commonjs",
+    "in-source": true
+  }],
+  "suffix": ".bs.js",
+  "sources": [
+    "src",
+  ],
+  "bs-dependencies": ["reason-react"]
+}

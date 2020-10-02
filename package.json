@@ -1,0 +1,38 @@
+{
+  "name": "@softwarefactory-project/re-patternfly",
+  "version": "0.1.0",
+  "description": "ReasonML binding for Patternfly",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softwarefactory-project/re-patternfly.git"
+  },
+  "keywords": [
+    "ReasonReact",
+    "patternfly"
+  ],
+  "author": "softwarefactory-dev@redhat.com",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/softwarefactory-project/re-patternfly/issues"
+  },
+  "homepage": "https://github.com/softwarefactory-project/re-patternfly#readme",
+  "files": [
+    "src/*.re",
+    "bsconfig.json"
+  ],
+  "devDependencies": {
+    "bs-platform": "^7.2.2"
+  },
+  "dependencies": {
+    "@patternfly/react-core": "^4.50.2",
+    "reason-react": "^0.9.1"
+  },
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  }
+}
