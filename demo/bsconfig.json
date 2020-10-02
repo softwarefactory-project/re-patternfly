@@ -1,0 +1,34 @@
+{
+  "name": "re-patternfly-example",
+  "reason": {
+    "react-jsx": 3
+  },
+  "sources": [
+    "src",
+    {
+      "dir": "tests",
+      "type": "dev"
+    }
+  ],
+  "bsc-flags": [
+    "-bs-super-errors",
+    "-bs-no-version-header"
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "namespace": true,
+  "bs-dependencies": [
+    "reason-react",
+    "@softwarefactory-project/re-patternfly"
+  ],
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest"
+  ],
+  "namespace": true,
+  "refmt": 3
+}
