@@ -1,0 +1,5 @@
+/.merlin
+/lib/bs/
+/lib/ocaml/
+/src/*.bs.js
+/examples/package-lock.json
