@@ -1,0 +1,4 @@
+/.merlin
+/lib/bs/
+/lib/ocaml/
+/src/*.bs.js
