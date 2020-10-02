@@ -1,0 +1,7 @@
+- project:
+    check: &jobs
+      jobs:
+        - shake-factory-npm-test:
+            vars:
+              project_root: "demo"
+    gate: *jobs
