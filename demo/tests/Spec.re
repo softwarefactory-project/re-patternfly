@@ -55,4 +55,19 @@ describe("Basic test", () => {
     expect(createAsserts(["title", "body", "footer"]))
     |> toEqual([true, true, true]);
   });
+
+  test("can render Page", () => {
+    let container = getContainer(container);
+    open Patternfly;
+    act(() => {
+      ReactDOMRe.render(<Page> <PageHeader logo="logo" /> </Page>, container)
+    });
+
+    expect(
+      container
+      ->DOM.findBySelectorAndTextContent("a", "logo")
+      ->Belt.Option.isSome,
+    )
+    |> toEqual(true);
+  });
 });
