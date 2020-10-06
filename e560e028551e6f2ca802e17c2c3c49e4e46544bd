@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0f42909d_415f7fbd",
+        "filename": "demo/.gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2020-10-06T19:05:47Z",
+      "side": 1,
+      "message": "I meant to separate both .gitignore to simplify re-use of the demo project. perhaps this could be discussed and removed in another change?",
+      "revId": "e560e028551e6f2ca802e17c2c3c49e4e46544bd",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22db79df_9a90ac44",
+        "filename": "src/Patternfly.re",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2020-10-06T19:05:47Z",
+      "side": 1,
+      "message": "Please add the upstream documentation in a comment.",
+      "revId": "e560e028551e6f2ca802e17c2c3c49e4e46544bd",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
