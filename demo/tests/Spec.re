@@ -28,4 +28,31 @@ describe("Basic test", () => {
     )
     |> toBe(true);
   });
+
+  test("can render Card", () => {
+    let container = getContainer(container);
+    open Patternfly;
+    act(() => {
+      ReactDOMRe.render(
+        <Card>
+          <CardTitle> {"title" |> React.string} </CardTitle>
+          <CardBody> {"body" |> React.string} </CardBody>
+          <CardFooter> {"footer" |> React.string} </CardFooter>
+        </Card>,
+        container,
+      )
+    });
+
+    let createAsserts = (strs: list(string)) => {
+      let createAssert = (str: string) => {
+        container
+        ->DOM.findBySelectorAndTextContent("div", str)
+        ->Belt.Option.isSome;
+      };
+      Belt.List.map(strs, createAssert);
+    };
+
+    expect(createAsserts(["title", "body", "footer"]))
+    |> toEqual([true, true, true]);
+  });
 });

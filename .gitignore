@@ -1,5 +1,8 @@
-/.merlin
+*.merlin
 /lib/bs/
 /lib/ocaml/
-/src/*.bs.js
+*.bs.js
 /demo/package-lock.json
+/demo/lib
+node_modules
+/.bsb.lock
