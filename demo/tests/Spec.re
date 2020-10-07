@@ -76,4 +76,14 @@ describe("Basic test", () => {
       ("a", "Gerrit"),
     )
   });
+
+  test("can render Grid and GridItem", () => {
+    doAssertDomSelector(
+      <Grid md=Column._12 hasGutter=true>
+        <GridItem md=Column._6> {"Item1" |> React.string} </GridItem>
+        <GridItem md=Column._6> {"Item2" |> React.string} </GridItem>
+      </Grid>,
+      ("div", "Item1"),
+    )
+  });
 });
