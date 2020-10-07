@@ -38,5 +38,35 @@ module Page = {
 
 module PageHeader = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~logo: string) => React.element = "PageHeader";
+  external make: (~logo: string, ~topNav: React.element=?) => React.element =
+    "PageHeader";
+};
+
+module Nav = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~variant: [@bs.string] [
+                  | [@bs.as "vertial"] `Vertical
+                  | [@bs.as "horizontal"] `Horizontal
+                ]
+                  =?,
+      ~onSelect: 'onSelect=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "Nav";
+};
+
+module NavList = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "NavList";
+};
+
+module NavItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~isActive: bool, ~onClick: 'onClick=?, ~children: 'children=?) =>
+    React.element =
+    "NavItem";
 };
