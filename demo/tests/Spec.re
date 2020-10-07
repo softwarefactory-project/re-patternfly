@@ -1,73 +1,79 @@
 open Jest;
 open Expect;
 open ReactTestUtils;
+open Patternfly;
+
+let assertDom = (container, component, expectFunc) => {
+  let container = getContainer(container);
+
+  act(() => {ReactDOMRe.render(component, container)});
+
+  expectFunc(container);
+};
+
+let assertDomSelector = (container, component, (selector, value)) => {
+  assertDom(container, component, container => {
+    expect(
+      container
+      ->DOM.findBySelectorAndTextContent(selector, value)
+      ->Belt.Option.isSome,
+    )
+    |> toBe(true)
+  });
+};
 
 describe("Basic test", () => {
   let container = ref(None);
   beforeEach(prepareContainer(container));
   afterEach(cleanupContainer(container));
+  let doAssertDom = assertDom(container);
+  let doAssertDomSelector = assertDomSelector(container);
 
   test("can render List", () => {
-    let container = getContainer(container);
-
-    act(() => {
-      ReactDOMRe.render(
-        <Patternfly.List>
-          <Patternfly.ListItem>
-            {"Hello world!" |> React.string}
-          </Patternfly.ListItem>
-        </Patternfly.List>,
-        container,
-      )
-    });
-
-    expect(
-      container
-      ->DOM.findBySelectorAndTextContent("li", "Hello world!")
-      ->Belt.Option.isSome,
+    doAssertDomSelector(
+      <List> <ListItem> {"Hello world!" |> React.string} </ListItem> </List>,
+      ("li", "Hello world!"),
     )
-    |> toBe(true);
   });
 
   test("can render Card", () => {
-    let container = getContainer(container);
-    open Patternfly;
-    act(() => {
-      ReactDOMRe.render(
-        <Card>
-          <CardTitle> {"title" |> React.string} </CardTitle>
-          <CardBody> {"body" |> React.string} </CardBody>
-          <CardFooter> {"footer" |> React.string} </CardFooter>
-        </Card>,
-        container,
-      )
-    });
+    doAssertDom(
+      <Card>
+        <CardTitle> {"title" |> React.string} </CardTitle>
+        <CardBody> {"body" |> React.string} </CardBody>
+        <CardFooter> {"footer" |> React.string} </CardFooter>
+      </Card>,
+      container => {
+        let createAsserts = (strs: list(string)) => {
+          let createAssert = (str: string) => {
+            container
+            ->DOM.findBySelectorAndTextContent("div", str)
+            ->Belt.Option.isSome;
+          };
+          Belt.List.map(strs, createAssert);
+        };
 
-    let createAsserts = (strs: list(string)) => {
-      let createAssert = (str: string) => {
-        container
-        ->DOM.findBySelectorAndTextContent("div", str)
-        ->Belt.Option.isSome;
-      };
-      Belt.List.map(strs, createAssert);
-    };
-
-    expect(createAsserts(["title", "body", "footer"]))
-    |> toEqual([true, true, true]);
+        expect(createAsserts(["title", "body", "footer"]))
+        |> toEqual([true, true, true]);
+      },
+    )
   });
 
   test("can render Page", () => {
-    let container = getContainer(container);
-    open Patternfly;
-    act(() => {
-      ReactDOMRe.render(<Page> <PageHeader logo="logo" /> </Page>, container)
-    });
-
-    expect(
-      container
-      ->DOM.findBySelectorAndTextContent("a", "logo")
-      ->Belt.Option.isSome,
+    doAssertDomSelector(
+      <Page> <PageHeader logo="logo" /> </Page>,
+      ("a", "logo"),
     )
-    |> toEqual(true);
+  });
+
+  test("can render Nav", () => {
+    doAssertDomSelector(
+      <Nav>
+        <NavList>
+          <NavItem isActive=false> {"Gerrit" |> React.string} </NavItem>
+        </NavList>
+      </Nav>,
+      ("a", "Gerrit"),
+    )
   });
 });
