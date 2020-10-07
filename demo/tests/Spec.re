@@ -70,4 +70,25 @@ describe("Basic test", () => {
     )
     |> toEqual(true);
   });
+
+  test("can render Grid and GridItem", () => {
+    let container = getContainer(container);
+    open Patternfly;
+    act(() => {
+      ReactDOMRe.render(
+        <Grid md=Column._12 hasGutter=true>
+          <GridItem md=Column._6> {"Item1" |> React.string} </GridItem>
+          <GridItem md=Column._6> {"Item2" |> React.string} </GridItem>
+        </Grid>,
+        container,
+      )
+    });
+
+    expect(
+      container
+      ->DOM.findBySelectorAndTextContent("div", "Item1")
+      ->Belt.Option.isSome,
+    )
+    |> toEqual(true);
+  });
 });
