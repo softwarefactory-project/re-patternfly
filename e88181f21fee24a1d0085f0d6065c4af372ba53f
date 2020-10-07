@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "36c1ee7f_96b6af0a",
+        "filename": "src/Patternfly.re",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7
+      },
+      "writtenOn": "2020-10-07T22:32:50Z",
+      "side": 1,
+      "message": "Well done :-). In the next PS, I removed the unboxed any type because in that situation we only have integer.",
+      "revId": "e88181f21fee24a1d0085f0d6065c4af372ba53f",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
