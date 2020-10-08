@@ -8,18 +8,23 @@ This project uses:
 * `parcel` to serve and bundle the code.
 * `jest` to run ReactTestUtils.
 
-Prepare with:
+Using yarn (this works better for cross project linking with path):
 
 ```
-sudo npm install -g parcel-bundler
+yarn install
+yarn build
+yarn test
+yarn start & yarn serve
+# Open browser on http://localhost:1234
+```
+
+Or using npm (when using non local dependencies):
+
+```
 npm install
-```
-
-Run with:
-
-```
+npm run build
 npm run test
-npm start & npm run serve
+npm run start & npm run serve
 # Open browser on http://localhost:1234
 ```
 

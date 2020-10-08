@@ -11,6 +11,12 @@ Add to your `package.json`:
 npm install @softwarefactory-project/re-patternfly
 ```
 
+Or using yarn:
+
+```
+yarn add @softwarefactory-project/re-patternfly
+```
+
 Add to your `bsconfig.json`:
 
 ```diff
