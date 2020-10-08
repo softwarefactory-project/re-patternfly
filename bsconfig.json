@@ -15,9 +15,16 @@
   ],
   "suffix": ".bs.js",
   "sources": [
-    "src"
+    "src",
+    {
+      "dir": "tests",
+      "type": "dev"
+    }
   ],
   "bs-dependencies": [
     "reason-react"
+  ],
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest"
   ]
 }
