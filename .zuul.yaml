@@ -1,7 +1,12 @@
+- job:
+    name: shake-factory-npm-test-demo
+    parent: shake-factory-npm-test
+    vars:
+      project_root: "demo"
+
 - project:
     check: &jobs
       jobs:
-        - shake-factory-npm-test:
-            vars:
-              project_root: "demo"
+        - shake-factory-npm-test
+        - shake-factory-npm-test-demo
     gate: *jobs

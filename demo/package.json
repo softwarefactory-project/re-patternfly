@@ -5,22 +5,31 @@
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
+      "test": "jest --verbose --testMatch **/tests/*.bs.js",
     "serve": "parcel serve ./src/index.html",
-    "dist": "parcel build ./src/index.html --public-url /",
-    "test": "npm run build && jest --verbose --testMatch **/tests/*.bs.js"
+    "dist": "parcel build ./src/index.html --public-url /"
   },
+  "keywords": [
+    "ReasonReact",
+    "patternfly",
+    "reason",
+    "reason-react",
+    "reasonml",
+    "reasonml-bindings",
+    "bucklescript",
+    "bucklescript-bindings"
+  ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@softwarefactory-project/re-patternfly": "file:..",
-    "@patternfly/react-core": "^4.50.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "reason-react": "^0.9.1"
+      "@patternfly/react-core": "^4.50.2",
+    "@softwarefactory-project/re-patternfly": ".."
   },
   "devDependencies": {
-    "@glennsl/bs-jest": "^0.5.1",
-    "jest": "^26.5.0",
-    "bs-platform": "^8.2.0"
+    "bs-platform": "^8.2.0",
+      "@glennsl/bs-jest": "^0.5.1",
+           "parcel": "^1.12.4"
   },
   "jest": {
     "moduleNameMapper": {

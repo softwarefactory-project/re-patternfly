@@ -2,7 +2,7 @@
 /lib/bs/
 /lib/ocaml/
 *.bs.js
-/demo/package-lock.json
-/demo/lib
 node_modules
+/demo/yarn.lock
+/yarn.lock
 /.bsb.lock
