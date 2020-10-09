@@ -61,7 +61,9 @@ describe("Basic test", () => {
 
   test("can render Page", () => {
     doAssertDomSelector(
-      <Page> <PageHeader logo="logo" /> </Page>,
+      <Page header={<PageHeader logo="logo" />}>
+        <PageSection variant=`Darker />
+      </Page>,
       ("a", "logo"),
     )
   });

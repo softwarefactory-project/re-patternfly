@@ -33,13 +33,34 @@ module CardFooter = {
 // https://www.patternfly.org/v4/components/page
 module Page = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "Page";
+  external make:
+    (~header: React.element=?, ~children: 'children=?) => React.element =
+    "Page";
 };
 
 module PageHeader = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make: (~logo: string, ~topNav: React.element=?) => React.element =
     "PageHeader";
+};
+
+module PageSection = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~isFilled: bool=?,
+      ~isWidthLimited: bool=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "default"] `Default
+                  | [@bs.as "light"] `Light
+                  | [@bs.as "dark"] `Dark
+                  | [@bs.as "darker"] `Darker
+                ]
+                  =?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "PageSection";
 };
 
 // https://www.patternfly.org/v4/components/navigation
