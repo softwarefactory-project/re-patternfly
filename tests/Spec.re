@@ -37,9 +37,11 @@ describe("Basic test", () => {
   });
 
   test("can render Card", () => {
+    let titleStyle =
+      ReactDOM.Style.make(~color="#444444", ~fontSize="68px", ());
     doAssertDom(
-      <Card>
-        <CardTitle> {"title" |> React.string} </CardTitle>
+      <Card className="pf-c-card pf-m-compact">
+        <CardTitle style=titleStyle> {"title" |> React.string} </CardTitle>
         <CardBody> {"body" |> React.string} </CardBody>
         <CardFooter> {"footer" |> React.string} </CardFooter>
       </Card>,
@@ -56,7 +58,7 @@ describe("Basic test", () => {
         expect(createAsserts(["title", "body", "footer"]))
         |> toEqual([true, true, true]);
       },
-    )
+    );
   });
 
   test("can render Page", () => {

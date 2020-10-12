@@ -1,46 +1,96 @@
 // https://www.patternfly.org/v4/components/list/react/
 module List = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "List";
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "List";
 };
 
 module ListItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "ListItem";
+  external make:
+    (~style: ReactDOM.Style.t=?, ~children: 'children=?) => React.element =
+    "ListItem";
 };
 
 // https://www.patternfly.org/v4/components/card
 module Card = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "Card";
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "Card";
 };
 
 module CardTitle = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "CardTitle";
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "CardTitle";
 };
 
 module CardBody = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "CardBody";
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "CardBody";
 };
 
 module CardFooter = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "CardFooter";
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "CardFooter";
 };
 
 // https://www.patternfly.org/v4/components/page
 module Page = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~header: React.element=?, ~children: 'children=?) => React.element =
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~header: React.element=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
     "Page";
 };
 
 module PageHeader = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~logo: string, ~topNav: React.element=?) => React.element =
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~logo: string,
+      ~topNav: React.element=?
+    ) =>
+    React.element =
     "PageHeader";
 };
 
@@ -48,6 +98,8 @@ module PageSection = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
       ~isFilled: bool=?,
       ~isWidthLimited: bool=?,
       ~variant: [@bs.string] [
@@ -68,6 +120,8 @@ module Nav = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
       ~variant: [@bs.string] [
                   | [@bs.as "vertial"] `Vertical
                   | [@bs.as "horizontal"] `Horizontal
@@ -82,13 +136,26 @@ module Nav = {
 
 module NavList = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "NavList";
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "NavList";
 };
 
 module NavItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~isActive: bool, ~onClick: 'onClick=?, ~children: 'children=?) =>
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~isActive: bool,
+      ~onClick: 'onClick=?,
+      ~children: 'children=?
+    ) =>
     React.element =
     "NavItem";
 };
@@ -96,7 +163,14 @@ module NavItem = {
 // https://www.patternfly.org/v4/layouts/bullseye
 module Bullseye = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "Bullseye";
+  external make:
+    (
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "Bullseye";
 };
 
 // https://www.patternfly.org/v4/layouts/grid
