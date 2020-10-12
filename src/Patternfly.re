@@ -25,6 +25,11 @@ module Card = {
     (
       ~className: string=?,
       ~style: ReactDOM.Style.t=?,
+      ~isCompact: bool=?,
+      ~isFlat: bool=?,
+      ~isHoverable: bool=?,
+      ~isSelectable: bool=?,
+      ~isSelected: bool=?,
       ~children: 'children=?
     ) =>
     React.element =

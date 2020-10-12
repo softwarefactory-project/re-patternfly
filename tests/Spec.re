@@ -40,7 +40,7 @@ describe("Basic test", () => {
     let titleStyle =
       ReactDOM.Style.make(~color="#444444", ~fontSize="68px", ());
     doAssertDom(
-      <Card className="pf-c-card pf-m-compact">
+      <Card isSelectable=true className="pf-c-card pf-m-compact">
         <CardTitle style=titleStyle> {"title" |> React.string} </CardTitle>
         <CardBody> {"body" |> React.string} </CardBody>
         <CardFooter> {"footer" |> React.string} </CardFooter>
