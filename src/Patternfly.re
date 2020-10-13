@@ -25,6 +25,7 @@ module Card = {
     (
       ~className: string=?,
       ~style: ReactDOM.Style.t=?,
+      ~onClick: ReactEvent.Mouse.t => unit=?,
       ~isCompact: bool=?,
       ~isFlat: bool=?,
       ~isHoverable: bool=?,
@@ -157,8 +158,8 @@ module NavItem = {
     (
       ~className: string=?,
       ~style: ReactDOM.Style.t=?,
+      ~onClick: ReactEvent.Mouse.t => unit=?,
       ~isActive: bool,
-      ~onClick: 'onClick=?,
       ~children: 'children=?
     ) =>
     React.element =
