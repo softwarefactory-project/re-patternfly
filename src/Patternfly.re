@@ -257,3 +257,70 @@ module GridItem = {
     React.element =
     "GridItem";
 };
+
+// https://www.patternfly.org/v4/components/login-page
+module LoginFooterItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~href: string=?, ~children: 'children=?) => React.element =
+    "LoginFooterItem";
+};
+module LoginForm = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~showHelperText: bool=?,
+      ~helperText: string=?,
+      ~helperTextIcon: string=?,
+      ~usernameLabel: string=?,
+      ~usernameValue: string=?,
+      ~isValidUsername: bool=?,
+      ~passwordLabel: string=?,
+      ~passwordValue: string=?,
+      ~isValidPassword: bool=?,
+      ~rememberMeLabel: string=?,
+      ~isRememberMeChecked: bool=?,
+      ~onChangeRememberMe: ReactEvent.Mouse.t => unit=?,
+      ~onLoginButtonClick: ReactEvent.Mouse.t => unit=?,
+      ~onChangeUsername: ReactEvent.Mouse.t => unit=?,
+      ~onChangePassword: ReactEvent.Mouse.t => unit=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "LoginForm";
+};
+module LoginMainFooterBandItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element =
+    "LoginMainFooterBandItem";
+};
+
+type cprops = Js.Dict.t(string);
+
+module LoginMainFooterLinksItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~href: string=?, ~linkComponentProps: cprops=?, ~children: 'children=?) =>
+    React.element =
+    "LoginMainFooterLinksItem";
+};
+module LoginPage = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~footerListVariants: [@bs.string] [ | [@bs.as "inline"] `Inline]=?,
+      ~brandImgSrc: string=?,
+      ~brandImgAlt: string=?,
+      ~backgroundImgSrc: string=?,
+      ~backgroundImgAlt: string=?,
+      ~footerListItems: React.element=?,
+      ~textContent: string=?,
+      ~loginTitle: string=?,
+      ~loginSubtitle: string=?,
+      ~socialMediaLoginContent: React.element=?,
+      ~signUpForAccountMessage: React.element=?,
+      ~forgotCredentials: React.element=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "LoginPage";
+};
