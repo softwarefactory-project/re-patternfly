@@ -93,7 +93,7 @@ module PageHeader = {
     (
       ~className: string=?,
       ~style: ReactDOM.Style.t=?,
-      ~logo: string,
+      ~logo: React.element,
       ~topNav: React.element=?
     ) =>
     React.element =
@@ -119,6 +119,14 @@ module PageSection = {
     ) =>
     React.element =
     "PageSection";
+};
+
+// https://www.patternfly.org/v4/components/brand
+module Brand = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~className: string=?, ~alt: string, ~src: string=?) => React.element =
+    "Brand";
 };
 
 // https://www.patternfly.org/v4/components/navigation

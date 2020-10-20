@@ -81,6 +81,15 @@ describe("Basic test", () => {
     )
   });
 
+  // Need to figure out fix
+  // test("can render Brand", () => {
+  //   Js.log("dsfsdfd");
+  //   doAssertDomSelector(
+  //     <Brand alt="BrandText" src="src" />,
+  //     ("img", "brand"),
+  //   );
+  // });
+
   test("can render Grid and GridItem", () => {
     doAssertDomSelector(
       <Grid md=Column._12 hasGutter=true>
