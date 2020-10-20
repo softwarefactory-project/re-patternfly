@@ -111,6 +111,10 @@ describe("Dom rendering test", () => {
     )
   });
 
+  test("can render Brand", () => {
+    doAssertDomJustSelector(<Brand alt="BrandText" src="src" />, "img")
+  });
+
   test("can render Grid and GridItem", () => {
     doAssertDomSelector(
       <Grid md=Column._12 hasGutter=true>

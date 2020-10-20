@@ -52,6 +52,14 @@ module Banner = {
     "Banner";
 };
 
+// https://www.patternfly.org/v4/components/brand
+module Brand = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~className: string=?, ~alt: string, ~src: string=?) => React.element =
+    "Brand";
+};
+
 // https://www.patternfly.org/v4/components/breadcrumb
 module Breadcrumb = {
   [@react.component] [@bs.module "@patternfly/react-core"]
