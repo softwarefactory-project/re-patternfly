@@ -389,3 +389,32 @@ module AlertGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make: (~children: 'children) => React.element = "AlertGroup";
 };
+
+module Avatar = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~alt: string, ~src: string=?) => React.element = "Avatar";
+};
+
+module Badge = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~isRead: bool=?, ~children: 'children=?) => React.element =
+    "Badge";
+};
+
+module Banner = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~isSticky: bool=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "info"] `Info
+                  | [@bs.as "success"] `Success
+                  | [@bs.as "warning"] `Warning
+                  | [@bs.as "danger"] `Danger
+                ]
+                  =?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "Banner";
+};
