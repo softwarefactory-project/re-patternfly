@@ -362,3 +362,7 @@ module TableBody = {
   [@react.component] [@bs.module "@patternfly/react-table"]
   external make: (~children: 'children=?) => React.element = "TableBody";
 };
+
+module Icons = {
+  include PFIcons;
+};
