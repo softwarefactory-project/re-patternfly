@@ -2,6 +2,7 @@ open Jest;
 open Expect;
 open ReactTestUtils;
 open Patternfly;
+open Patternfly.Layout;
 
 let assertDom = (container, component, expectFunc) => {
   let container = getContainer(container);
@@ -28,7 +29,29 @@ let assertDomJustSelector = (container, component, selector) => {
   });
 };
 
-describe("Basic test", () => {
+describe("Module quality", () => {
+  let getName = line =>
+    Js.String.split(" ", line)->Belt.Array.get(1)->Belt.Option.getExn;
+  let getModulesNames = src =>
+    Js.String.split("\n", src)
+    ->Belt.List.fromArray
+    ->Belt.List.keep(l => Js.String.startsWith("module ", l))
+    ->Belt.List.map(getName);
+  let listSort = xs =>
+    xs->Belt.List.sort((a, b) =>
+      Js.String.localeCompare(a, b)->Belt.Int.fromFloat * (-1)
+    );
+
+  let testOrder = fn => {
+    let names = fn->Node.Fs.readFileSync(`utf8)->getModulesNames;
+    () => expect(names) |> toEqual(names->listSort);
+  };
+
+  test("Patternfly names are in order", testOrder("src/Patternfly.re"));
+  test("Layout names are in order", testOrder("src/PFLayouts.re"));
+});
+
+describe("Dom rendering test", () => {
   let container = ref(None);
   beforeEach(prepareContainer(container));
   afterEach(cleanupContainer(container));
