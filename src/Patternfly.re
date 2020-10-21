@@ -52,6 +52,40 @@ module Banner = {
     "Banner";
 };
 
+// https://www.patternfly.org/v4/components/breadcrumb
+module Breadcrumb = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "Breadcrumb";
+};
+
+module BreadcrumbItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~isActive: bool=?,
+      ~showDivider: bool=?,
+      ~target: string=?,
+      ~_to: string=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "BreadcrumbItem";
+};
+
+module BreadcrumbHeading = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~isActive: bool=?,
+      ~showDivider: bool=?,
+      ~target: string=?,
+      ~_to: string=?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "BreadcrumbHeading";
+};
+
 // https://www.patternfly.org/v4/components/list/react/
 module List = {
   [@react.component] [@bs.module "@patternfly/react-core"]

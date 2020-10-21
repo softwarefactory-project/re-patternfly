@@ -129,4 +129,16 @@ describe("Basic test", () => {
       ("div", "Good"),
     )
   );
+
+  test("can show Breadcrum", () =>
+    doAssertDomSelector(
+      <Breadcrumb>
+        <BreadcrumbItem _to="#"> {"Home" |> React.string} </BreadcrumbItem>
+        <BreadcrumbHeading _to="#">
+          {"Project" |> React.string}
+        </BreadcrumbHeading>
+      </Breadcrumb>,
+      ("a", "Home"),
+    )
+  );
 });

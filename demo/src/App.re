@@ -25,11 +25,20 @@ module SortableTable = {
 
 [@react.component]
 let make = () => {
-  <Patternfly.List>
-    <Patternfly.ListItem> <Icons.Topology /> </Patternfly.ListItem>
-    <Patternfly.ListItem>
-      {"Hello patternfly!" |> React.string}
-    </Patternfly.ListItem>
-    <Patternfly.ListItem> <SortableTable /> </Patternfly.ListItem>
-  </Patternfly.List>;
+  <>
+    <Breadcrumb>
+      <BreadcrumbItem _to="#"> {"Home" |> React.string} </BreadcrumbItem>
+      <BreadcrumbHeading _to="#">
+        {"Project" |> React.string}
+      </BreadcrumbHeading>
+    </Breadcrumb>
+    <Patternfly.List>
+      <Patternfly.ListItem />
+      <Patternfly.ListItem> <Icons.Topology /> </Patternfly.ListItem>
+      <Patternfly.ListItem>
+        {"Hello patternfly!" |> React.string}
+      </Patternfly.ListItem>
+      <Patternfly.ListItem> <SortableTable /> </Patternfly.ListItem>
+    </Patternfly.List>
+  </>;
 };
