@@ -27,6 +27,7 @@ module SortableTable = {
 let make = () => {
   <Patternfly.List>
     <Patternfly.ListItem>
+      <Icons.Topology />
       {"Hello patternfly!" |> React.string}
       <SortableTable />
     </Patternfly.ListItem>
