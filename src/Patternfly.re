@@ -73,6 +73,12 @@ module CardFooter = {
     "CardFooter";
 };
 
+// https://www.patternfly.org/v4/guidelines/icons/
+//   generated using re-cli
+module Icons = {
+  include PFIcons;
+};
+
 // https://www.patternfly.org/v4/components/page
 module Page = {
   [@react.component] [@bs.module "@patternfly/react-core"]

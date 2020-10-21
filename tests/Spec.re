@@ -21,6 +21,12 @@ let assertDomSelector = (container, component, (selector, value)) => {
     |> toBe(true)
   });
 };
+let assertDomJustSelector = (container, component, selector) => {
+  assertDom(container, component, container => {
+    expect(container->DOM.findBySelector(selector)->isDOMComponent)
+    |> toBe(true)
+  });
+};
 
 describe("Basic test", () => {
   let container = ref(None);
@@ -28,6 +34,7 @@ describe("Basic test", () => {
   afterEach(cleanupContainer(container));
   let doAssertDom = assertDom(container);
   let doAssertDomSelector = assertDomSelector(container);
+  let doAssertDomJustSelector = assertDomJustSelector(container);
 
   test("can render List", () => {
     doAssertDomSelector(
@@ -89,5 +96,9 @@ describe("Basic test", () => {
       </Grid>,
       ("div", "Item1"),
     )
+  });
+
+  test("can render Icons", () => {
+    doAssertDomJustSelector(<Icons.Topology />, "svg")
   });
 });
