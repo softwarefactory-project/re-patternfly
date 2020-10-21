@@ -101,4 +101,18 @@ describe("Basic test", () => {
   test("can render Icons", () => {
     doAssertDomJustSelector(<Icons.Topology />, "svg")
   });
+
+  test("can render Alert", () => {
+    doAssertDomSelector(
+      <Alert title="Gogo" variant=`Success />,
+      ("span", "Success alert:"),
+    )
+  });
+
+  test("can render AlertGroup", () => {
+    doAssertDomJustSelector(
+      <AlertGroup> <Alert title="Ok" /> </AlertGroup>,
+      "li",
+    )
+  });
 });
