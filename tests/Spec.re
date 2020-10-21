@@ -141,4 +141,8 @@ describe("Basic test", () => {
       ("a", "Home"),
     )
   );
+
+  test("can render Checkbox", () =>
+    doAssertDomJustSelector(<Checkbox id="test" />, "input")
+  );
 });

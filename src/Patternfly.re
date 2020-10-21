@@ -86,6 +86,24 @@ module BreadcrumbHeading = {
     "BreadcrumbHeading";
 };
 
+// https://www.patternfly.org/v4/components/checkbox
+module Checkbox = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~checked: bool=?,
+      ~description: string=?,
+      ~id: string,
+      ~isChecked: bool=?,
+      ~isDisabled: bool=?,
+      ~isValid: bool=?,
+      ~label: string=?,
+      ~onChange: ReactEvent.Mouse.t => unit=?
+    ) =>
+    React.element =
+    "Checkbox";
+};
+
 // https://www.patternfly.org/v4/components/list/react/
 module List = {
   [@react.component] [@bs.module "@patternfly/react-core"]
