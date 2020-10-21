@@ -21,6 +21,37 @@ module AlertGroup = {
   external make: (~children: 'children) => React.element = "AlertGroup";
 };
 
+// https://www.patternfly.org/v4/components/avatar
+module Avatar = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~alt: string, ~src: string=?) => React.element = "Avatar";
+};
+
+// https://www.patternfly.org/v4/components/badge
+module Badge = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~isRead: bool=?, ~children: 'children=?) => React.element =
+    "Badge";
+};
+
+module Banner = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~isSticky: bool=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "info"] `Info
+                  | [@bs.as "success"] `Success
+                  | [@bs.as "warning"] `Warning
+                  | [@bs.as "danger"] `Danger
+                ]
+                  =?,
+      ~children: 'children=?
+    ) =>
+    React.element =
+    "Banner";
+};
+
 // https://www.patternfly.org/v4/components/list/react/
 module List = {
   [@react.component] [@bs.module "@patternfly/react-core"]

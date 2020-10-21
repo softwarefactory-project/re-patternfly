@@ -115,4 +115,18 @@ describe("Basic test", () => {
       "li",
     )
   });
+
+  test("can render Badge", () =>
+    doAssertDomSelector(
+      <Badge isRead=false> {42 |> React.int} </Badge>,
+      ("span", "42"),
+    )
+  );
+
+  test("can render Banner", () =>
+    doAssertDomSelector(
+      <Banner variant=`Info> {"Good" |> React.string} </Banner>,
+      ("div", "Good"),
+    )
+  );
 });
