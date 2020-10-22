@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "349f6817_67f0d682",
+        "filename": "tests/Spec.re",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6
+      },
+      "writtenOn": "2020-10-22T07:52:39Z",
+      "side": 1,
+      "message": "La pureté jusqu\u0027au bout !",
+      "revId": "7f562f9ff37a0f4058f00905157d57f9b0a592ae",
+      "serverId": "6c1dc8ef-8b94-40e4-bd83-c2359d45ecc0",
+      "unresolved": false
+    }
+  ]
+}
