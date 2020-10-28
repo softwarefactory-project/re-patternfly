@@ -331,7 +331,7 @@ module PageHeader = {
     (
       ~className: string=?,
       ~style: ReactDOM.Style.t=?,
-      ~logo: string,
+      ~logo: React.element=?,
       ~topNav: React.element=?
     ) =>
     React.element =
