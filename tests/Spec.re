@@ -93,7 +93,7 @@ describe("Dom rendering test", () => {
 
   test("can render Page", () => {
     doAssertDomSelector(
-      <Page header={<PageHeader logo="logo" />}>
+      <Page header={<PageHeader logo={"logo" |> React.string} />}>
         <PageSection variant=`Darker />
       </Page>,
       ("a", "logo"),
