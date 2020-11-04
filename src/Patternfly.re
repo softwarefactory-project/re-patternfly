@@ -1,25 +1,4 @@
-// https://www.patternfly.org/v4/components/alert
-module Alert = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~variant: [@bs.string] [
-                  | [@bs.as "info"] `Info
-                  | [@bs.as "success"] `Success
-                  | [@bs.as "warning"] `Warning
-                  | [@bs.as "danger"] `Danger
-                ]
-                  =?,
-      ~title: string
-    ) =>
-    React.element =
-    "Alert";
-};
-
-module AlertGroup = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children) => React.element = "AlertGroup";
-};
+include Patternfly_Generated;
 
 // https://www.patternfly.org/v4/components/avatar
 module Avatar = {
