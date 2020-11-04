@@ -4,10 +4,7 @@
   "reason": {
     "react-jsx": 3
   },
-  "bsc-flags": [
-    "-bs-no-version-header",
-    "-bs-super-errors"
-  ],
+  "bsc-flags": ["-bs-no-version-header", "-bs-super-errors"],
   "package-specs": [
     {
       "module": "commonjs",
@@ -17,22 +14,13 @@
   "suffix": ".bs.js",
   "sources": [
     {
-      "dir": "src",
-      "public": [
-          "Patternfly",
-	  "PFIcons",
-	  "PFLayouts",
-      ]
+      "dir": "src"
     },
     {
       "dir": "tests",
       "type": "dev"
     }
   ],
-  "bs-dependencies": [
-    "reason-react"
-  ],
-  "bs-dev-dependencies": [
-    "@glennsl/bs-jest"
-  ]
+  "bs-dependencies": ["reason-react"],
+  "bs-dev-dependencies": ["@glennsl/bs-jest"]
 }
