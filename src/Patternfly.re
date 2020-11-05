@@ -130,54 +130,6 @@ module NavList = {
     "NavList";
 };
 
-// https://www.patternfly.org/v4/components/page
-module Page = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~style: ReactDOM.Style.t=?,
-      ~header: React.element=?,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "Page";
-};
-
-module PageHeader = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~style: ReactDOM.Style.t=?,
-      ~logo: React.element=?,
-      ~topNav: React.element=?
-    ) =>
-    React.element =
-    "PageHeader";
-};
-
-module PageSection = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~style: ReactDOM.Style.t=?,
-      ~isFilled: bool=?,
-      ~isWidthLimited: bool=?,
-      ~variant: [@bs.string] [
-                  | [@bs.as "default"] `Default
-                  | [@bs.as "light"] `Light
-                  | [@bs.as "dark"] `Dark
-                  | [@bs.as "darker"] `Darker
-                ]
-                  =?,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "PageSection";
-};
-
 // https://www.patternfly.org/v4/components/table
 type transformers;
 type rowProps = {className: string};

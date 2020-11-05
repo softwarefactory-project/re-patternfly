@@ -31,17 +31,20 @@ module Alert = {
     React.element =
     "Alert";
 };
+
 module AlertActionCloseButton = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (~className: string=?, ~variantLabel: string=?) => React.element =
     "AlertActionCloseButton";
 };
+
 module AlertActionLink = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make: (~children: string=?, ~className: string=?) => React.element =
     "AlertActionLink";
 };
+
 module AlertIcon = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -58,6 +61,7 @@ module AlertIcon = {
     React.element =
     "AlertIcon";
 };
+
 module AlertGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -65,6 +69,7 @@ module AlertGroup = {
     React.element =
     "AlertGroup";
 };
+
 module Banner = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -84,6 +89,7 @@ module Banner = {
     React.element =
     "Banner";
 };
+
 module Button = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -128,6 +134,7 @@ module Button = {
     React.element =
     "Button";
 };
+
 module Card = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -145,6 +152,7 @@ module Card = {
     React.element =
     "Card";
 };
+
 module CardActions = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -156,6 +164,7 @@ module CardActions = {
     React.element =
     "CardActions";
 };
+
 module CardBody = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -168,6 +177,7 @@ module CardBody = {
     React.element =
     "CardBody";
 };
+
 module CardFooter = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -179,6 +189,7 @@ module CardFooter = {
     React.element =
     "CardFooter";
 };
+
 module CardHeadMain = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -190,6 +201,7 @@ module CardHeadMain = {
     React.element =
     "CardHeadMain";
 };
+
 module CardHeader = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -201,6 +213,7 @@ module CardHeader = {
     React.element =
     "CardHeader";
 };
+
 module CardHeaderMain = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -212,6 +225,7 @@ module CardHeaderMain = {
     React.element =
     "CardHeaderMain";
 };
+
 module CardTitle = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -223,6 +237,7 @@ module CardTitle = {
     React.element =
     "CardTitle";
 };
+
 module Checkbox = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -240,12 +255,27 @@ module Checkbox = {
     React.element =
     "Checkbox";
 };
+
+module Login = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~footer: 'children=?,
+      ~header: 'children=?
+    ) =>
+    React.element =
+    "Login";
+};
+
 module LoginFooter = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (~children: 'children=?, ~className: string=?) => React.element =
     "LoginFooter";
 };
+
 module LoginFooterItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -258,6 +288,7 @@ module LoginFooterItem = {
     React.element =
     "LoginFooterItem";
 };
+
 module LoginForm = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -285,12 +316,26 @@ module LoginForm = {
     React.element =
     "LoginForm";
 };
+
+module LoginHeader = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~headerBrand: 'children=?
+    ) =>
+    React.element =
+    "LoginHeader";
+};
+
 module LoginMainBody = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (~children: 'children=?, ~className: string=?) => React.element =
     "LoginMainBody";
 };
+
 module LoginMainFooter = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -304,12 +349,14 @@ module LoginMainFooter = {
     React.element =
     "LoginMainFooter";
 };
+
 module LoginMainFooterBandItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (~children: 'children=?, ~className: string=?) => React.element =
     "LoginMainFooterBandItem";
 };
+
 module LoginMainFooterLinksItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -324,6 +371,7 @@ module LoginMainFooterLinksItem = {
     React.element =
     "LoginMainFooterLinksItem";
 };
+
 module LoginMainHeader = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -336,6 +384,7 @@ module LoginMainHeader = {
     React.element =
     "LoginMainHeader";
 };
+
 module LoginPage = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -356,4 +405,195 @@ module LoginPage = {
     ) =>
     React.element =
     "LoginPage";
+};
+
+module Page = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~additionalGroupedContent: 'children=?,
+      ~breadcrumb: 'children=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~defaultManagedSidebarIsOpen: bool=?,
+      ~groupProps: 'any=?,
+      ~header: 'children=?,
+      ~isBreadcrumbGrouped: bool=?,
+      ~isBreadcrumbWidthLimited: bool=?,
+      ~isManagedSidebar: bool=?,
+      ~isNotificationDrawerExpanded: bool=?,
+      ~isTertiaryNavGrouped: bool=?,
+      ~isTertiaryNavWidthLimited: bool=?,
+      ~mainAriaLabel: string=?,
+      ~mainContainerId: string=?,
+      ~notificationDrawer: 'children=?,
+      ~role: string=?,
+      ~sidebar: 'children=?,
+      ~skipToContent: React.element=?,
+      ~style: ReactDOM.Style.t=?,
+      ~tertiaryNav: 'children=?
+    ) =>
+    React.element =
+    "Page";
+};
+
+module PageContext = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~isManagedSidebar: bool, ~isNavOpen: bool) => React.element =
+    "PageContext";
+};
+
+module PageBreadcrumb = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~hasOverflowScroll: bool=?,
+      ~hasShadowBottom: bool=?,
+      ~hasShadowTop: bool=?,
+      ~isWidthLimited: bool=?,
+      ~sticky: [@bs.string] [
+                 | [@bs.as "top"] `Top
+                 | [@bs.as "bottom"] `Bottom
+               ]
+                 =?
+    ) =>
+    React.element =
+    "PageBreadcrumb";
+};
+
+module PageGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~hasOverflowScroll: bool=?,
+      ~hasShadowBottom: bool=?,
+      ~hasShadowTop: bool=?,
+      ~sticky: [@bs.string] [
+                 | [@bs.as "top"] `Top
+                 | [@bs.as "bottom"] `Bottom
+               ]
+                 =?
+    ) =>
+    React.element =
+    "PageGroup";
+};
+
+module PageHeader = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~headerTools: 'children=?,
+      ~isManagedSidebar: bool=?,
+      ~isNavOpen: bool=?,
+      ~logo: 'children=?,
+      ~logoComponent: 'children=?,
+      ~logoProps: 'any=?,
+      ~role: string=?,
+      ~showNavToggle: bool=?,
+      ~topNav: 'children=?
+    ) =>
+    React.element =
+    "PageHeader";
+};
+
+module PageHeaderTools = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "PageHeaderTools";
+};
+
+module PageHeaderToolsGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children, ~className: string=?, ~visibility: 'any=?) =>
+    React.element =
+    "PageHeaderToolsGroup";
+};
+
+module PageHeaderToolsItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~id: string=?,
+      ~isSelected: bool=?,
+      ~visibility: 'any=?
+    ) =>
+    React.element =
+    "PageHeaderToolsItem";
+};
+
+module PageNavigation = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~hasOverflowScroll: bool=?,
+      ~hasShadowBottom: bool=?,
+      ~hasShadowTop: bool=?,
+      ~isWidthLimited: bool=?,
+      ~sticky: [@bs.string] [
+                 | [@bs.as "top"] `Top
+                 | [@bs.as "bottom"] `Bottom
+               ]
+                 =?
+    ) =>
+    React.element =
+    "PageNavigation";
+};
+
+module PageSection = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~hasOverflowScroll: bool=?,
+      ~hasShadowBottom: bool=?,
+      ~hasShadowTop: bool=?,
+      ~isFilled: bool=?,
+      ~isWidthLimited: bool=?,
+      ~padding: 'any=?,
+      ~sticky: [@bs.string] [
+                 | [@bs.as "top"] `Top
+                 | [@bs.as "bottom"] `Bottom
+               ]
+                 =?,
+      ~type_: [@bs.string] [
+                | [@bs.as "default"] `Default
+                | [@bs.as "nav"] `Nav
+              ]
+                =?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "default"] `Default
+                  | [@bs.as "light"] `Light
+                  | [@bs.as "dark"] `Dark
+                  | [@bs.as "darker"] `Darker
+                ]
+                  =?
+    ) =>
+    React.element =
+    "PageSection";
+};
+
+module PageSidebar = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~isManagedSidebar: bool=?,
+      ~isNavOpen: bool=?,
+      ~nav: 'children=?,
+      ~theme: [@bs.string] [ | [@bs.as "dark"] `Dark | [@bs.as "light"] `Light]
+                =?
+    ) =>
+    React.element =
+    "PageSidebar";
 };
