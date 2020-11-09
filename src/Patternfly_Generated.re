@@ -111,6 +111,7 @@ module Button = {
       ~isLarge: bool=?,
       ~isLoading: bool=?,
       ~isSmall: bool=?,
+      ~onClick: ReactEvent.Mouse.t => unit=?,
       ~spinnerAriaValueText: string=?,
       ~tabIndex: int=?,
       ~type_: [@bs.string] [
