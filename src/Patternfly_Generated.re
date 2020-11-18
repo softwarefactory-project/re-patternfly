@@ -70,6 +70,21 @@ module AlertGroup = {
     "AlertGroup";
 };
 
+module Avatar = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~alt: string, ~className: string=?, ~src: string=?) => React.element =
+    "Avatar";
+};
+
+module Badge = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~isRead: bool=?) =>
+    React.element =
+    "Badge";
+};
+
 module Banner = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -88,6 +103,19 @@ module Banner = {
     ) =>
     React.element =
     "Banner";
+};
+
+module Brand = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~alt: string,
+      ~className: string=?,
+      ~onClick: ReactEvent.Mouse.t => unit=?,
+      ~src: string=?
+    ) =>
+    React.element =
+    "Brand";
 };
 
 module Button = {

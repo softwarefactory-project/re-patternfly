@@ -1,26 +1,5 @@
 include Patternfly_Generated;
 
-// https://www.patternfly.org/v4/components/avatar
-module Avatar = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~alt: string, ~src: string=?) => React.element = "Avatar";
-};
-
-// https://www.patternfly.org/v4/components/badge
-module Badge = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~isRead: bool=?, ~children: 'children=?) => React.element =
-    "Badge";
-};
-
-// https://www.patternfly.org/v4/components/brand
-module Brand = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (~className: string=?, ~alt: string, ~src: string=?) => React.element =
-    "Brand";
-};
-
 // https://www.patternfly.org/v4/components/breadcrumb
 module Breadcrumb = {
   [@react.component] [@bs.module "@patternfly/react-core"]
