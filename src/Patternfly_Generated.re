@@ -285,6 +285,83 @@ module Checkbox = {
     "Checkbox";
 };
 
+module ActionGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "ActionGroup";
+};
+
+module Form = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~isHorizontal: bool=?,
+      ~isWidthLimited: bool=?
+    ) =>
+    React.element =
+    "Form";
+};
+
+module FormAlert = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "FormAlert";
+};
+
+module FormGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~fieldId: string,
+      ~hasNoPaddingTop: bool=?,
+      ~helperText: 'children=?,
+      ~helperTextIcon: 'children=?,
+      ~helperTextInvalid: 'children=?,
+      ~helperTextInvalidIcon: 'children=?,
+      ~isHelperTextBeforeField: bool=?,
+      ~isInline: bool=?,
+      ~isRequired: bool=?,
+      ~label: 'children=?,
+      ~labelIcon: React.element=?,
+      ~validated: [@bs.string] [
+                    | [@bs.as "success"] `Success
+                    | [@bs.as "warning"] `Warning
+                    | [@bs.as "error"] `Error
+                    | [@bs.as "default"] `Default
+                  ]
+                    =?
+    ) =>
+    React.element =
+    "FormGroup";
+};
+
+module FormHelperText = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~icon: 'children=?,
+      ~isError: bool=?,
+      ~isHidden: bool=?
+    ) =>
+    React.element =
+    "FormHelperText";
+};
+
+module FormSection = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "FormSection";
+};
+
 module Login = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
