@@ -703,3 +703,139 @@ module PageSidebar = {
     React.element =
     "PageSidebar";
 };
+
+module Text = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: [@bs.string] [
+                    | [@bs.as "h1"] `H1
+                    | [@bs.as "h2"] `H2
+                    | [@bs.as "h3"] `H3
+                    | [@bs.as "h4"] `H4
+                    | [@bs.as "h5"] `H5
+                    | [@bs.as "h6"] `H6
+                    | [@bs.as "p"] `P
+                    | [@bs.as "a"] `A
+                    | [@bs.as "small"] `Small
+                    | [@bs.as "blockquote"] `Blockquote
+                    | [@bs.as "pre"] `Pre
+                  ]
+                    =?
+    ) =>
+    React.element =
+    "Text";
+};
+
+module TextContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "TextContent";
+};
+
+module TextList = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: [@bs.string] [
+                    | [@bs.as "ul"] `Ul
+                    | [@bs.as "ol"] `Ol
+                    | [@bs.as "dl"] `Dl
+                  ]
+                    =?
+    ) =>
+    React.element =
+    "TextList";
+};
+
+module TextListItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: [@bs.string] [
+                    | [@bs.as "li"] `Li
+                    | [@bs.as "dt"] `Dt
+                    | [@bs.as "dd"] `Dd
+                  ]
+                    =?
+    ) =>
+    React.element =
+    "TextListItem";
+};
+
+module TextArea = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~isRequired: bool=?,
+      ~resizeOrientation: [@bs.string] [
+                            | [@bs.as "horizontal"] `Horizontal
+                            | [@bs.as "vertical"] `Vertical
+                            | [@bs.as "both"] `Both
+                          ]
+                            =?,
+      ~validated: [@bs.string] [
+                    | [@bs.as "success"] `Success
+                    | [@bs.as "warning"] `Warning
+                    | [@bs.as "error"] `Error
+                    | [@bs.as "default"] `Default
+                  ]
+                    =?,
+      ~value: string=?
+    ) =>
+    React.element =
+    "TextArea";
+};
+
+module TextInput = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~customIconDimensions: string=?,
+      ~customIconUrl: string=?,
+      ~iconVariant: [@bs.string] [
+                      | [@bs.as "calendar"] `Calendar
+                      | [@bs.as "clock"] `Clock
+                    ]
+                      =?,
+      ~id: string,
+      ~isDisabled: bool=?,
+      ~isLeftTruncated: bool=?,
+      ~isReadOnly: bool=?,
+      ~isRequired: bool=?,
+      ~onChange: (string, ReactEvent.Mouse.t) => unit=?,
+      ~type_: [@bs.string] [
+                | [@bs.as "text"] `Text
+                | [@bs.as "date"] `Date
+                | [@bs.as "datetime-local"] `Datetimelocal
+                | [@bs.as "email"] `Email
+                | [@bs.as "month"] `Month
+                | [@bs.as "number"] `Number
+                | [@bs.as "password"] `Password
+                | [@bs.as "search"] `Search
+                | [@bs.as "tel"] `Tel
+                | [@bs.as "time"] `Time
+                | [@bs.as "url"] `Url
+              ]
+                =?,
+      ~validated: [@bs.string] [
+                    | [@bs.as "success"] `Success
+                    | [@bs.as "warning"] `Warning
+                    | [@bs.as "error"] `Error
+                    | [@bs.as "default"] `Default
+                  ]
+                    =?,
+      ~value: string=?
+    ) =>
+    React.element =
+    "TextInput";
+};
