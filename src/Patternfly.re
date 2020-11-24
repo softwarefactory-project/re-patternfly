@@ -1,4 +1,15 @@
-include Patternfly_Generated;
+// Most components are generated with re-cli
+include PFComponents;
+
+// https://www.patternfly.org/v4/guidelines/icons/
+//   generated using re-cli
+module Icons = {
+  include PFIcons;
+};
+
+module Layout = {
+  include PFLayouts;
+};
 
 // https://www.patternfly.org/v4/components/breadcrumb
 module Breadcrumb = {
@@ -32,16 +43,6 @@ module BreadcrumbItem = {
     ) =>
     React.element =
     "BreadcrumbItem";
-};
-
-// https://www.patternfly.org/v4/guidelines/icons/
-//   generated using re-cli
-module Icons = {
-  include PFIcons;
-};
-
-module Layout = {
-  include PFLayouts;
 };
 
 // https://www.patternfly.org/v4/components/list/react/

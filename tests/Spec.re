@@ -36,7 +36,10 @@ describe("Module quality", () => {
     Js.String.split("\n", src)
     ->Belt.List.fromArray
     ->Belt.List.keep(l => Js.String.startsWith("module ", l))
-    ->Belt.List.map(getName);
+    ->Belt.List.map(getName)
+    ->Belt.List.keep(l
+        // l not in ["Icons", "Layout"]
+        => !["Icons", "Layout"]->Belt.List.has(l, (a, b) => a == b));
   let listSort = xs =>
     xs->Belt.List.sort((a, b) =>
       Js.String.localeCompare(a, b)->Belt.Int.fromFloat * (-1)
