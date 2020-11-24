@@ -1,3 +1,145 @@
+module AboutModal = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~backgroundImageSrc: string=?,
+      ~brandImageAlt: string,
+      ~brandImageSrc: string,
+      ~children: 'children,
+      ~className: string=?,
+      ~closeButtonAriaLabel: string=?,
+      ~isOpen: bool=?,
+      ~noAboutModalBoxContentContainer: bool=?,
+      ~productName: string=?,
+      ~trademark: string=?
+    ) =>
+    React.element =
+    "AboutModal";
+};
+
+module AboutModalBox = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "AboutModalBox";
+};
+
+module AboutModalBoxBrand = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~alt: string, ~className: string=?, ~src: string=?) => React.element =
+    "AboutModalBoxBrand";
+};
+
+module AboutModalBoxCloseButton = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~className: string=?) => React.element =
+    "AboutModalBoxCloseButton";
+};
+
+module AboutModalBoxContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~id: string,
+      ~noAboutModalBoxContentContainer: bool=?,
+      ~trademark: string
+    ) =>
+    React.element =
+    "AboutModalBoxContent";
+};
+
+module AboutModalBoxHeader = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~className: string=?, ~id: string, ~productName: string=?) =>
+    React.element =
+    "AboutModalBoxHeader";
+};
+
+module AboutModalBoxHero = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~backgroundImageSrc: string=?, ~className: string=?) => React.element =
+    "AboutModalBoxHero";
+};
+
+module AboutModalContainer = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~aboutModalBoxContentId: string,
+      ~aboutModalBoxHeaderId: string,
+      ~backgroundImageSrc: string=?,
+      ~brandImageAlt: string,
+      ~brandImageSrc: string,
+      ~children: 'children,
+      ~className: string=?,
+      ~closeButtonAriaLabel: string=?,
+      ~isOpen: bool=?,
+      ~productName: string=?,
+      ~trademark: string=?
+    ) =>
+    React.element =
+    "AboutModalContainer";
+};
+
+module Accordion = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~asDefinitionList: bool=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~headingLevel: [@bs.string] [
+                       | [@bs.as "h1"] `H1
+                       | [@bs.as "h2"] `H2
+                       | [@bs.as "h3"] `H3
+                       | [@bs.as "h4"] `H4
+                       | [@bs.as "h5"] `H5
+                       | [@bs.as "h6"] `H6
+                     ]
+                       =?
+    ) =>
+    React.element =
+    "Accordion";
+};
+
+module AccordionContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: React.element=?,
+      ~id: string=?,
+      ~isFixed: bool=?,
+      ~isHidden: bool=?
+    ) =>
+    React.element =
+    "AccordionContent";
+};
+
+module AccordionItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "AccordionItem";
+};
+
+module AccordionToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: React.element=?,
+      ~id: string,
+      ~isExpanded: bool=?
+    ) =>
+    React.element =
+    "AccordionToggle";
+};
+
 module Alert = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -70,11 +212,85 @@ module AlertGroup = {
     "AlertGroup";
 };
 
+module ApplicationLauncher = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~favorites: array(string)=?,
+      ~favoritesLabel: string=?,
+      ~isDisabled: bool=?,
+      ~isGrouped: bool=?,
+      ~isOpen: bool=?,
+      ~items: array('children)=?,
+      ~searchNoResultsText: string=?,
+      ~searchPlaceholderText: string=?,
+      ~searchProps: 'any=?,
+      ~toggleIcon: 'children=?,
+      ~toggleId: string=?
+    ) =>
+    React.element =
+    "ApplicationLauncher";
+};
+
+module ApplicationLauncherContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children) => React.element =
+    "ApplicationLauncherContent";
+};
+
+module ApplicationLauncherIcon = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "ApplicationLauncherIcon";
+};
+
+module ApplicationLauncherItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~ariaIsFavoriteLabel: string=?,
+      ~ariaIsNotFavoriteLabel: string=?,
+      ~component: 'children=?,
+      ~customChild: 'children=?,
+      ~enterTriggersArrowDown: bool=?,
+      ~icon: 'children=?,
+      ~id: string=?,
+      ~isExternal: bool=?,
+      ~isFavorite: bool=?,
+      ~tooltip: 'children=?,
+      ~tooltipProps: 'any=?
+    ) =>
+    React.element =
+    "ApplicationLauncherItem";
+};
+
+module ApplicationLauncherText = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "ApplicationLauncherText";
+};
+
 module Avatar = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (~alt: string, ~className: string=?, ~src: string=?) => React.element =
     "Avatar";
+};
+
+module Backdrop = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "Backdrop";
+};
+
+module BackgroundImage = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~className: string=?, ~filter: React.element=?, ~src: string) =>
+    React.element =
+    "BackgroundImage";
 };
 
 module Badge = {
@@ -321,6 +537,79 @@ module Checkbox = {
     ) =>
     React.element =
     "Checkbox";
+};
+
+module ClipboardCopy = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~clickTip: string=?,
+      ~entryDelay: int=?,
+      ~exitDelay: int=?,
+      ~hoverTip: string=?,
+      ~isCode: bool=?,
+      ~isExpanded: bool=?,
+      ~isReadOnly: bool=?,
+      ~maxWidth: string=?,
+      ~switchDelay: int=?,
+      ~textAriaLabel: string=?,
+      ~toggleAriaLabel: string=?
+    ) =>
+    React.element =
+    "ClipboardCopy";
+};
+
+module ClipboardCopyButton = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~entryDelay: int=?,
+      ~exitDelay: int=?,
+      ~id: string,
+      ~maxWidth: string=?,
+      ~position: [@bs.string] [
+                   | [@bs.as "auto"] `Auto
+                   | [@bs.as "top"] `Top
+                   | [@bs.as "bottom"] `Bottom
+                   | [@bs.as "left"] `Left
+                   | [@bs.as "right"] `Right
+                 ]
+                   =?,
+      ~textId: string
+    ) =>
+    React.element =
+    "ClipboardCopyButton";
+};
+
+module ClipboardCopyExpanded = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~isCode: bool=?,
+      ~isReadOnly: bool=?
+    ) =>
+    React.element =
+    "ClipboardCopyExpanded";
+};
+
+module ClipboardCopyToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~contentId: string,
+      ~id: string,
+      ~isExpanded: bool=?,
+      ~textId: string
+    ) =>
+    React.element =
+    "ClipboardCopyToggle";
 };
 
 module DescriptionList = {
@@ -748,6 +1037,102 @@ module FormSection = {
     "FormSection";
 };
 
+module Hint = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~actions: 'children=?, ~children: 'children=?, ~className: string=?) =>
+    React.element =
+    "Hint";
+};
+
+module HintBody = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "HintBody";
+};
+
+module HintFooter = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "HintFooter";
+};
+
+module HintTitle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "HintTitle";
+};
+
+module Label = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~closeBtn: 'children=?,
+      ~closeBtnProps: 'any=?,
+      ~color: [@bs.string] [
+                | [@bs.as "blue"] `Blue
+                | [@bs.as "cyan"] `Cyan
+                | [@bs.as "green"] `Green
+                | [@bs.as "orange"] `Orange
+                | [@bs.as "purple"] `Purple
+                | [@bs.as "red"] `Red
+                | [@bs.as "grey"] `Grey
+              ]
+                =?,
+      ~href: string=?,
+      ~icon: 'children=?,
+      ~isOverflowLabel: bool=?,
+      ~isTruncated: bool=?,
+      ~tooltipPosition: [@bs.string] [
+                          | [@bs.as "auto"] `Auto
+                          | [@bs.as "top"] `Top
+                          | [@bs.as "bottom"] `Bottom
+                          | [@bs.as "left"] `Left
+                          | [@bs.as "right"] `Right
+                        ]
+                          =?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "outline"] `Outline
+                  | [@bs.as "filled"] `Filled
+                ]
+                  =?
+    ) =>
+    React.element =
+    "Label";
+};
+
+module LabelGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~categoryName: string=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~closeBtnAriaLabel: string=?,
+      ~collapsedText: string=?,
+      ~defaultIsOpen: bool=?,
+      ~expandedText: string=?,
+      ~isClosable: bool=?,
+      ~isVertical: bool=?,
+      ~numLabels: int=?,
+      ~tooltipPosition: [@bs.string] [
+                          | [@bs.as "auto"] `Auto
+                          | [@bs.as "top"] `Top
+                          | [@bs.as "bottom"] `Bottom
+                          | [@bs.as "left"] `Left
+                          | [@bs.as "right"] `Right
+                        ]
+                          =?
+    ) =>
+    React.element =
+    "LabelGroup";
+};
+
 module List = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -902,6 +1287,7 @@ module LoginPage = {
   external make:
     (
       ~backgroundImgAlt: string=?,
+      ~backgroundImgSrc: string=?,
       ~brandImgAlt: string=?,
       ~brandImgSrc: string=?,
       ~children: 'children=?,
@@ -1176,6 +1562,138 @@ module PageSidebar = {
     "PageSidebar";
 };
 
+module Radio = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~checked: bool=?,
+      ~className: string=?,
+      ~description: 'children=?,
+      ~id: string,
+      ~isChecked: bool=?,
+      ~isDisabled: bool=?,
+      ~isLabelBeforeButton: bool=?,
+      ~isLabelWrapped: bool=?,
+      ~isValid: bool=?,
+      ~label: 'children=?,
+      ~name: string,
+      ~onChange: (bool, ReactEvent.Mouse.t) => unit=?
+    ) =>
+    React.element =
+    "Radio";
+};
+
+module Spinner = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~size: [@bs.string] [
+               | [@bs.as "sm"] `Sm
+               | [@bs.as "md"] `Md
+               | [@bs.as "lg"] `Lg
+               | [@bs.as "xl"] `Xl
+             ]
+               =?
+    ) =>
+    React.element =
+    "Spinner";
+};
+
+module Splitter = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~orientation: [@bs.string] [
+                      | [@bs.as "horizontal"] `Horizontal
+                      | [@bs.as "vertical"] `Vertical
+                    ]
+                      =?
+    ) =>
+    React.element =
+    "Splitter";
+};
+
+module Tab = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~eventKey: string,
+      ~href: string=?,
+      ~isHidden: bool=?,
+      ~tabContentId: string=?,
+      ~title: 'children
+    ) =>
+    React.element =
+    "Tab";
+};
+
+module TabButton = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~href: string=?) =>
+    React.element =
+    "TabButton";
+};
+
+module TabContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~activeKey: string=?,
+      ~child: React.element=?,
+      ~children: 'any=?,
+      ~className: string=?,
+      ~eventKey: string=?,
+      ~id: string
+    ) =>
+    React.element =
+    "TabContent";
+};
+
+module TabTitleIcon = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "TabTitleIcon";
+};
+
+module TabTitleText = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "TabTitleText";
+};
+
+module Tabs = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~activeKey: string=?,
+      ~children: 'children,
+      ~className: string=?,
+      ~component: [@bs.string] [ | [@bs.as "div"] `Div | [@bs.as "nav"] `Nav]=?,
+      ~id: string=?,
+      ~inset: 'any=?,
+      ~isBox: bool=?,
+      ~isFilled: bool=?,
+      ~isSecondary: bool=?,
+      ~isVertical: bool=?,
+      ~leftScrollAriaLabel: string=?,
+      ~mountOnEnter: bool=?,
+      ~rightScrollAriaLabel: string=?,
+      ~unmountOnExit: bool=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "default"] `Default
+                  | [@bs.as "light300"] `Light300
+                ]
+                  =?
+    ) =>
+    React.element =
+    "Tabs";
+};
+
 module Text = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -1310,4 +1828,85 @@ module TextInput = {
     ) =>
     React.element =
     "TextInput";
+};
+
+module Tile = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~icon: 'children=?,
+      ~isDisabled: bool=?,
+      ~isDisplayLarge: bool=?,
+      ~isSelected: bool=?,
+      ~isStacked: bool=?,
+      ~title: string
+    ) =>
+    React.element =
+    "Tile";
+};
+
+module Title = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~headingLevel: [@bs.string] [
+                       | [@bs.as "h1"] `H1
+                       | [@bs.as "h2"] `H2
+                       | [@bs.as "h3"] `H3
+                       | [@bs.as "h4"] `H4
+                       | [@bs.as "h5"] `H5
+                       | [@bs.as "h6"] `H6
+                     ]
+    ) =>
+    React.element =
+    "Title";
+};
+
+module ToolbarContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~alignment: 'any=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~clearFiltersButtonText: string=?,
+      ~isExpanded: bool=?,
+      ~showClearFiltersButton: bool=?,
+      ~toolbarId: string=?,
+      ~visibility: 'any=?,
+      ~visiblity: 'any=?
+    ) =>
+    React.element =
+    "ToolbarContent";
+};
+
+module ToolbarExpandIconWrapper = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "ToolbarExpandIconWrapper";
+};
+
+module ToolbarExpandableContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~clearFiltersButtonText: string=?,
+      ~isExpanded: bool=?,
+      ~showClearFiltersButton: bool
+    ) =>
+    React.element =
+    "ToolbarExpandableContent";
+};
+
+module ToolbarFilter = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children, ~showToolbarItem: bool=?) => React.element =
+    "ToolbarFilter";
 };
