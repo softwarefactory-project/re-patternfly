@@ -14,10 +14,7 @@
     "patternfly",
     "reason",
     "reason-react",
-    "reasonml",
-    "reasonml-bindings",
-    "bucklescript",
-    "bucklescript-bindings"
+    "rescript"
   ],
   "license": "Apache-2.0",
   "dependencies": {

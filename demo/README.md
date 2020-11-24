@@ -5,8 +5,8 @@ of the `@softwarefactory-project/re-patternfly` dependency in the `package.json`
 
 This project uses:
 
-* `parcel` to serve and bundle the code.
-* `jest` to run ReactTestUtils.
+- `parcel` to serve and bundle the code.
+- `jest` to run ReactTestUtils.
 
 Using yarn (this works better for cross project linking with path):
 
@@ -15,7 +15,6 @@ yarn install
 yarn build
 yarn test
 yarn start & yarn serve
-# Open browser on http://localhost:1234
 ```
 
 Or using npm (when using non local dependencies):
@@ -25,8 +24,9 @@ npm install
 npm run build
 npm run test
 npm run start & npm run serve
-# Open browser on http://localhost:1234
 ```
+
+Then open browser on `http://localhost:1234`
 
 Distribute with:
 
