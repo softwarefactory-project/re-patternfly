@@ -1,4 +1,7 @@
-// Most components are generated with re-cli
+// Most components are generated with https://softwarefactory-project.io/cgit/software-factory/re-cli/
+// The list entrypoint is GeneratePatternflyComponentBindings.re
+// Translation from typescript to reason is PatternflyBindings.re
+// Typescript parser is Typescript.re
 include PFComponents;
 
 // https://www.patternfly.org/v4/guidelines/icons/
@@ -9,105 +12,6 @@ module Icons = {
 
 module Layout = {
   include PFLayouts;
-};
-
-// https://www.patternfly.org/v4/components/breadcrumb
-module Breadcrumb = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "Breadcrumb";
-};
-
-module BreadcrumbHeading = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~isActive: bool=?,
-      ~showDivider: bool=?,
-      ~target: string=?,
-      ~_to: string=?,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "BreadcrumbHeading";
-};
-
-module BreadcrumbItem = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~isActive: bool=?,
-      ~showDivider: bool=?,
-      ~target: string=?,
-      ~_to: string=?,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "BreadcrumbItem";
-};
-
-// https://www.patternfly.org/v4/components/list/react/
-module List = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~style: ReactDOM.Style.t=?,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "List";
-};
-
-module ListItem = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (~style: ReactDOM.Style.t=?, ~children: 'children=?) => React.element =
-    "ListItem";
-};
-
-// https://www.patternfly.org/v4/components/navigation
-module Nav = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~style: ReactDOM.Style.t=?,
-      ~variant: [@bs.string] [
-                  | [@bs.as "vertial"] `Vertical
-                  | [@bs.as "horizontal"] `Horizontal
-                ]
-                  =?,
-      ~onSelect: 'onSelect=?,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "Nav";
-};
-
-module NavItem = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~style: ReactDOM.Style.t=?,
-      ~onClick: ReactEvent.Mouse.t => unit=?,
-      ~isActive: bool,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "NavItem";
-};
-
-module NavList = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~style: ReactDOM.Style.t=?,
-      ~children: 'children=?
-    ) =>
-    React.element =
-    "NavList";
 };
 
 // https://www.patternfly.org/v4/components/table

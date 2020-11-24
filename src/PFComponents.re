@@ -118,6 +118,44 @@ module Brand = {
     "Brand";
 };
 
+module Breadcrumb = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "Breadcrumb";
+};
+
+module BreadcrumbHeading = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: 'children=?,
+      ~showDivider: bool=?,
+      ~target: string=?,
+      ~_to: string=?
+    ) =>
+    React.element =
+    "BreadcrumbHeading";
+};
+
+module BreadcrumbItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: React.element=?,
+      ~isActive: bool=?,
+      ~showDivider: bool=?,
+      ~target: string=?,
+      ~_to: string=?
+    ) =>
+    React.element =
+    "BreadcrumbItem";
+};
+
 module Button = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -130,7 +168,7 @@ module Button = {
                        | [@bs.as "right"] `Right
                      ]
                        =?,
-      ~inoperableEvents: list(string)=?,
+      ~inoperableEvents: array(string)=?,
       ~isActive: bool=?,
       ~isAriaDisabled: bool=?,
       ~isBlock: bool=?,
@@ -285,6 +323,354 @@ module Checkbox = {
     "Checkbox";
 };
 
+module DescriptionList = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~columnModifier: 'any=?,
+      ~isAutoColumnWidths: bool=?,
+      ~isHorizontal: bool=?,
+      ~isInlineGrid: bool=?
+    ) =>
+    React.element =
+    "DescriptionList";
+};
+
+module DescriptionListDescription = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "DescriptionListDescription";
+};
+
+module DescriptionListGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'any=?, ~className: string=?) => React.element =
+    "DescriptionListGroup";
+};
+
+module DescriptionListTerm = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "DescriptionListTerm";
+};
+
+module Divider = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~component: [@bs.string] [
+                    | [@bs.as "hr"] `Hr
+                    | [@bs.as "li"] `Li
+                    | [@bs.as "div"] `Div
+                  ]
+                    =?,
+      ~inset: 'any=?,
+      ~isVertical: bool=?
+    ) =>
+    React.element =
+    "Divider";
+};
+
+module DrawerContext = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~isExpanded: bool, ~isStatic: bool) => React.element =
+    "DrawerContext";
+};
+
+module Drawer = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~isExpanded: bool=?,
+      ~isInline: bool=?,
+      ~isStatic: bool=?,
+      ~position: [@bs.string] [
+                   | [@bs.as "left"] `Left
+                   | [@bs.as "right"] `Right
+                   | [@bs.as "bottom"] `Bottom
+                 ]
+                   =?
+    ) =>
+    React.element =
+    "Drawer";
+};
+
+module DrawerActions = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "DrawerActions";
+};
+
+module DrawerCloseButton = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~className: string=?) => React.element = "DrawerCloseButton";
+};
+
+module DrawerContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~panelContent: 'children) =>
+    React.element =
+    "DrawerContent";
+};
+
+module DrawerContentBody = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~hasPadding: bool=?) =>
+    React.element =
+    "DrawerContentBody";
+};
+
+module DrawerPanelBody = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~hasNoPadding: bool=?) =>
+    React.element =
+    "DrawerPanelBody";
+};
+
+module DrawerPanelContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~hasNoBorder: bool=?,
+      ~widths: 'any=?
+    ) =>
+    React.element =
+    "DrawerPanelContent";
+};
+
+module DrawerSection = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "DrawerSection";
+};
+
+module Dropdown = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~autoFocus: bool=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~dropdownItems: 'any=?,
+      ~isGrouped: bool=?,
+      ~isOpen: bool=?,
+      ~isPlain: bool=?,
+      ~toggle: React.element
+    ) =>
+    React.element =
+    "Dropdown";
+};
+
+module DropdownGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~label: 'children=?) =>
+    React.element =
+    "DropdownGroup";
+};
+
+module DropdownItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~additionalChild: 'children=?,
+      ~autoFocus: bool=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: 'children=?,
+      ~customChild: 'children=?,
+      ~description: 'children=?,
+      ~href: string=?,
+      ~icon: 'children=?,
+      ~isDisabled: bool=?,
+      ~isHovered: bool=?,
+      ~isPlainText: bool=?,
+      ~listItemClassName: string=?,
+      ~styleChildren: bool=?,
+      ~tooltip: 'children=?,
+      ~tooltipProps: 'any=?
+    ) =>
+    React.element =
+    "DropdownItem";
+};
+
+module Separator = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~className: string=?) => React.element = "Separator";
+};
+
+module DropdownToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~icon: 'children=?,
+      ~id: string=?,
+      ~isActive: bool=?,
+      ~isDisabled: bool=?,
+      ~isOpen: bool=?,
+      ~isPlain: bool=?,
+      ~isPrimary: bool=?,
+      ~splitButtonItems: array('children)=?,
+      ~splitButtonVariant: [@bs.string] [
+                             | [@bs.as "action"] `Action
+                             | [@bs.as "checkbox"] `Checkbox
+                           ]
+                             =?,
+      ~type_: [@bs.string] [
+                | [@bs.as "button"] `Button
+                | [@bs.as "submit"] `Submit
+                | [@bs.as "reset"] `Reset
+              ]
+                =?
+    ) =>
+    React.element =
+    "DropdownToggle";
+};
+
+module DropdownToggleAction = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~id: string=?,
+      ~isDisabled: bool=?
+    ) =>
+    React.element =
+    "DropdownToggleAction";
+};
+
+module InternalDropdownItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~additionalChild: 'children=?,
+      ~autoFocus: bool=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: 'children=?,
+      ~componentID: string=?,
+      ~context: 'any=?,
+      ~customChild: 'children=?,
+      ~description: 'children=?,
+      ~enterTriggersArrowDown: bool=?,
+      ~href: string=?,
+      ~icon: 'children=?,
+      ~id: string=?,
+      ~index: int=?,
+      ~isDisabled: bool=?,
+      ~isHovered: bool=?,
+      ~isPlainText: bool=?,
+      ~listItemClassName: string=?,
+      ~role: string=?,
+      ~styleChildren: bool=?,
+      ~tooltip: 'children=?,
+      ~tooltipProps: 'any=?
+    ) =>
+    React.element =
+    "InternalDropdownItem";
+};
+
+module KebabToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~bubbleEvent: bool=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~id: string=?,
+      ~isActive: bool=?,
+      ~isDisabled: bool=?,
+      ~isOpen: bool=?,
+      ~isPlain: bool=?,
+      ~parentRef: 'any=?,
+      ~type_: [@bs.string] [
+                | [@bs.as "button"] `Button
+                | [@bs.as "submit"] `Submit
+                | [@bs.as "reset"] `Reset
+              ]
+                =?
+    ) =>
+    React.element =
+    "KebabToggle";
+};
+
+module EmptyState = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~isFullHeight: bool=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "xs"] `Xs
+                  | [@bs.as "small"] `Small
+                  | [@bs.as "large"] `Large
+                  | [@bs.as "xl"] `Xl
+                  | [@bs.as "full"] `Full
+                ]
+                  =?
+    ) =>
+    React.element =
+    "EmptyState";
+};
+
+module EmptyStateBody = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "EmptyStateBody";
+};
+
+module EmptyStateIcon = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~component: React.element=?,
+      ~icon: React.element=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "icon"] `Icon
+                  | [@bs.as "container"] `Container
+                ]
+                  =?
+    ) =>
+    React.element =
+    "EmptyStateIcon";
+};
+
+module Icon = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~color: string=?) => React.element = "Icon";
+};
+
+module EmptyStatePrimary = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "EmptyStatePrimary";
+};
+
+module EmptyStateSecondaryActions = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "EmptyStateSecondaryActions";
+};
+
 module ActionGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -360,6 +746,26 @@ module FormSection = {
   external make:
     (~children: 'children=?, ~className: string=?) => React.element =
     "FormSection";
+};
+
+module List = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: [@bs.string] [ | [@bs.as "ol"] `Ol | [@bs.as "ul"] `Ul]=?,
+      ~variant: [@bs.string] [ | [@bs.as "inline"] `Inline]=?
+    ) =>
+    React.element =
+    "List";
+};
+
+module ListItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children, ~style: ReactDOM.Style.t=?) => React.element =
+    "ListItem";
 };
 
 module Login = {
@@ -511,6 +917,72 @@ module LoginPage = {
     ) =>
     React.element =
     "LoginPage";
+};
+
+module Nav = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~onSelect: 'callback=?,
+      ~onToggle: 'callback=?,
+      ~theme: [@bs.string] [ | [@bs.as "dark"] `Dark | [@bs.as "light"] `Light]
+                =?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "default"] `Default
+                  | [@bs.as "horizontal"] `Horizontal
+                  | [@bs.as "tertiary"] `Tertiary
+                ]
+                  =?
+    ) =>
+    React.element =
+    "Nav";
+};
+
+module NavGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~id: string=?,
+      ~title: string
+    ) =>
+    React.element =
+    "NavGroup";
+};
+
+module NavItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: 'children=?,
+      ~isActive: bool=?,
+      ~onClick: ReactEvent.Mouse.t => unit=?,
+      ~preventDefault: bool=?,
+      ~style: ReactDOM.Style.t=?,
+      ~styleChildren: bool=?,
+      ~_to: string=?
+    ) =>
+    React.element =
+    "NavItem";
+};
+
+module NavList = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~ariaLeftScroll: string=?,
+      ~ariaRightScroll: string=?,
+      ~children: 'children=?,
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?
+    ) =>
+    React.element =
+    "NavList";
 };
 
 module Page = {
