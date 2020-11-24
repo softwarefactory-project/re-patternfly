@@ -6,29 +6,46 @@ ReasonML binding for [patternfly][patternfly].
 
 Components (generated from the typescript interfaces):
 
+- AboutModal
+- Accordion
 - Alert
 - AlertGroup
+- ApplicationLauncher
 - Avatar
+- Backdrop
+- BackgroundImage
 - Badge
 - Banner
 - Brand
 - Breadcrumb
 - Button
+- Card
+- Checkbox
+- ClipboardCopy
 - DescriptionList
 - Divider
 - Drawer
+- Drawer
 - Dropdown
 - EmptyState
-- Checkbox
-- Card
 - Form
+- Hint
+- Label
+- LabelGroup
 - List
 - LoginPage
 - Nav
 - Page
+- Radio
+- Spinner
+- Splitter
+- Tabs
 - Text
 - TextArea
 - TextInput
+- Tile
+- Title
+- Toolbar
 
 Table component supports this data definition:
 
