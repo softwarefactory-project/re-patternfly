@@ -33,7 +33,6 @@ let make = () => {
       </BreadcrumbHeading>
     </Breadcrumb>
     <Patternfly.List>
-      <Patternfly.ListItem />
       <Patternfly.ListItem> <Icons.Topology /> </Patternfly.ListItem>
       <Patternfly.ListItem>
         {"Hello patternfly!" |> React.string}
