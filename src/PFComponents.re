@@ -396,7 +396,7 @@ module Button = {
       ~onClick: ReactEvent.Mouse.t => unit=?,
       ~spinnerAriaValueText: string=?,
       ~tabIndex: int=?,
-      ~type_: [@bs.string] [
+      ~_type: [@bs.string] [
                 | [@bs.as "button"] `Button
                 | [@bs.as "submit"] `Submit
                 | [@bs.as "reset"] `Reset
@@ -819,7 +819,7 @@ module DropdownToggle = {
                              | [@bs.as "checkbox"] `Checkbox
                            ]
                              =?,
-      ~type_: [@bs.string] [
+      ~_type: [@bs.string] [
                 | [@bs.as "button"] `Button
                 | [@bs.as "submit"] `Submit
                 | [@bs.as "reset"] `Reset
@@ -887,7 +887,7 @@ module KebabToggle = {
       ~isOpen: bool=?,
       ~isPlain: bool=?,
       ~parentRef: 'any=?,
-      ~type_: [@bs.string] [
+      ~_type: [@bs.string] [
                 | [@bs.as "button"] `Button
                 | [@bs.as "submit"] `Submit
                 | [@bs.as "reset"] `Reset
@@ -1530,7 +1530,7 @@ module PageSection = {
                  | [@bs.as "bottom"] `Bottom
                ]
                  =?,
-      ~type_: [@bs.string] [
+      ~_type: [@bs.string] [
                 | [@bs.as "default"] `Default
                 | [@bs.as "nav"] `Nav
               ]
@@ -1803,7 +1803,7 @@ module TextInput = {
       ~isReadOnly: bool=?,
       ~isRequired: bool=?,
       ~onChange: (string, ReactEvent.Mouse.t) => unit=?,
-      ~type_: [@bs.string] [
+      ~_type: [@bs.string] [
                 | [@bs.as "text"] `Text
                 | [@bs.as "date"] `Date
                 | [@bs.as "datetime-local"] `Datetimelocal
