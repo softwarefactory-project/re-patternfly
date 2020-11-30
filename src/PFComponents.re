@@ -2,10 +2,10 @@ module AboutModal = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~children: 'children,
       ~backgroundImageSrc: string=?,
       ~brandImageAlt: string,
       ~brandImageSrc: string,
-      ~children: 'children,
       ~className: string=?,
       ~closeButtonAriaLabel: string=?,
       ~isOpen: bool=?,
@@ -69,12 +69,12 @@ module AboutModalContainer = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~children: 'children,
       ~aboutModalBoxContentId: string,
       ~aboutModalBoxHeaderId: string,
       ~backgroundImageSrc: string=?,
       ~brandImageAlt: string,
       ~brandImageSrc: string,
-      ~children: 'children,
       ~className: string=?,
       ~closeButtonAriaLabel: string=?,
       ~isOpen: bool=?,
@@ -89,8 +89,8 @@ module Accordion = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~asDefinitionList: bool=?,
       ~children: 'children=?,
+      ~asDefinitionList: bool=?,
       ~className: string=?,
       ~headingLevel: [@bs.string] [
                        | [@bs.as "h1"] `H1
@@ -144,13 +144,13 @@ module Alert = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~actionClose: 'children=?,
-      ~actionLinks: 'children=?,
       ~children: 'children=?,
+      ~actionClose: 'children1=?,
+      ~actionLinks: 'children2=?,
       ~className: string=?,
       ~isInline: bool=?,
       ~isLiveRegion: bool=?,
-      ~title: 'children,
+      ~title: 'children3,
       ~tooltipPosition: [@bs.string] [
                           | [@bs.as "auto"] `Auto
                           | [@bs.as "top"] `Top
@@ -226,7 +226,7 @@ module ApplicationLauncher = {
       ~searchNoResultsText: string=?,
       ~searchPlaceholderText: string=?,
       ~searchProps: 'any=?,
-      ~toggleIcon: 'children=?,
+      ~toggleIcon: 'children1=?,
       ~toggleId: string=?
     ) =>
     React.element =
@@ -252,14 +252,14 @@ module ApplicationLauncherItem = {
       ~ariaIsFavoriteLabel: string=?,
       ~ariaIsNotFavoriteLabel: string=?,
       ~component: 'children=?,
-      ~customChild: 'children=?,
+      ~customChild: 'children1=?,
       ~enterTriggersArrowDown: bool=?,
-      ~icon: 'children=?,
+      ~icon: 'children2=?,
       ~id: string=?,
       ~isExternal: bool=?,
       ~isFavorite: bool=?,
-      ~tooltip: 'children=?,
-      ~tooltipProps: 'any=?
+      ~tooltip: 'children3=?,
+      ~tooltipProps: 'any4=?
     ) =>
     React.element =
     "ApplicationLauncherItem";
@@ -347,7 +347,7 @@ module BreadcrumbHeading = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~component: 'children=?,
+      ~component: 'children1=?,
       ~showDivider: bool=?,
       ~target: string=?,
       ~_to: string=?
@@ -532,7 +532,7 @@ module Checkbox = {
       ~isChecked: bool=?,
       ~isDisabled: bool=?,
       ~isValid: bool=?,
-      ~label: 'children=?,
+      ~label: 'children1=?,
       ~onChange: (bool, ReactEvent.Mouse.t) => unit=?
     ) =>
     React.element =
@@ -618,7 +618,7 @@ module DescriptionList = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~columnModifier: 'any=?,
+      ~columnModifier: 'any1=?,
       ~isAutoColumnWidths: bool=?,
       ~isHorizontal: bool=?,
       ~isInlineGrid: bool=?
@@ -704,7 +704,11 @@ module DrawerCloseButton = {
 module DrawerContent = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~children: 'children=?, ~className: string=?, ~panelContent: 'children) =>
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~panelContent: 'children1
+    ) =>
     React.element =
     "DrawerContent";
 };
@@ -732,7 +736,7 @@ module DrawerPanelContent = {
       ~children: 'children=?,
       ~className: string=?,
       ~hasNoBorder: bool=?,
-      ~widths: 'any=?
+      ~widths: 'any1=?
     ) =>
     React.element =
     "DrawerPanelContent";
@@ -749,10 +753,10 @@ module Dropdown = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~autoFocus: bool=?,
       ~children: 'children=?,
+      ~autoFocus: bool=?,
       ~className: string=?,
-      ~dropdownItems: 'any=?,
+      ~dropdownItems: 'any1=?,
       ~isGrouped: bool=?,
       ~isOpen: bool=?,
       ~isPlain: bool=?,
@@ -765,7 +769,7 @@ module Dropdown = {
 module DropdownGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~children: 'children=?, ~className: string=?, ~label: 'children=?) =>
+    (~children: 'children=?, ~className: string=?, ~label: 'children1=?) =>
     React.element =
     "DropdownGroup";
 };
@@ -774,22 +778,22 @@ module DropdownItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~additionalChild: 'children=?,
-      ~autoFocus: bool=?,
       ~children: 'children=?,
+      ~additionalChild: 'children1=?,
+      ~autoFocus: bool=?,
       ~className: string=?,
-      ~component: 'children=?,
-      ~customChild: 'children=?,
-      ~description: 'children=?,
+      ~component: 'children2=?,
+      ~customChild: 'children3=?,
+      ~description: 'children4=?,
       ~href: string=?,
-      ~icon: 'children=?,
+      ~icon: 'children5=?,
       ~isDisabled: bool=?,
       ~isHovered: bool=?,
       ~isPlainText: bool=?,
       ~listItemClassName: string=?,
       ~styleChildren: bool=?,
-      ~tooltip: 'children=?,
-      ~tooltipProps: 'any=?
+      ~tooltip: 'children6=?,
+      ~tooltipProps: 'any7=?
     ) =>
     React.element =
     "DropdownItem";
@@ -806,7 +810,7 @@ module DropdownToggle = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~icon: 'children=?,
+      ~icon: 'children1=?,
       ~id: string=?,
       ~isActive: bool=?,
       ~isDisabled: bool=?,
@@ -847,18 +851,18 @@ module InternalDropdownItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~additionalChild: 'children=?,
-      ~autoFocus: bool=?,
       ~children: 'children=?,
+      ~additionalChild: 'children1=?,
+      ~autoFocus: bool=?,
       ~className: string=?,
-      ~component: 'children=?,
+      ~component: 'children2=?,
       ~componentID: string=?,
-      ~context: 'any=?,
-      ~customChild: 'children=?,
-      ~description: 'children=?,
+      ~context: 'any3=?,
+      ~customChild: 'children4=?,
+      ~description: 'children5=?,
       ~enterTriggersArrowDown: bool=?,
       ~href: string=?,
-      ~icon: 'children=?,
+      ~icon: 'children6=?,
       ~id: string=?,
       ~index: int=?,
       ~isDisabled: bool=?,
@@ -867,8 +871,8 @@ module InternalDropdownItem = {
       ~listItemClassName: string=?,
       ~role: string=?,
       ~styleChildren: bool=?,
-      ~tooltip: 'children=?,
-      ~tooltipProps: 'any=?
+      ~tooltip: 'children7=?,
+      ~tooltipProps: 'any8=?
     ) =>
     React.element =
     "InternalDropdownItem";
@@ -878,15 +882,15 @@ module KebabToggle = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~bubbleEvent: bool=?,
       ~children: 'children=?,
+      ~bubbleEvent: bool=?,
       ~className: string=?,
       ~id: string=?,
       ~isActive: bool=?,
       ~isDisabled: bool=?,
       ~isOpen: bool=?,
       ~isPlain: bool=?,
-      ~parentRef: 'any=?,
+      ~parentRef: 'any1=?,
       ~_type: [@bs.string] [
                 | [@bs.as "button"] `Button
                 | [@bs.as "submit"] `Submit
@@ -995,14 +999,14 @@ module FormGroup = {
       ~className: string=?,
       ~fieldId: string,
       ~hasNoPaddingTop: bool=?,
-      ~helperText: 'children=?,
-      ~helperTextIcon: 'children=?,
-      ~helperTextInvalid: 'children=?,
-      ~helperTextInvalidIcon: 'children=?,
+      ~helperText: 'children1=?,
+      ~helperTextIcon: 'children2=?,
+      ~helperTextInvalid: 'children3=?,
+      ~helperTextInvalidIcon: 'children4=?,
       ~isHelperTextBeforeField: bool=?,
       ~isInline: bool=?,
       ~isRequired: bool=?,
-      ~label: 'children=?,
+      ~label: 'children5=?,
       ~labelIcon: React.element=?,
       ~validated: [@bs.string] [
                     | [@bs.as "success"] `Success
@@ -1022,7 +1026,7 @@ module FormHelperText = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~icon: 'children=?,
+      ~icon: 'children1=?,
       ~isError: bool=?,
       ~isHidden: bool=?
     ) =>
@@ -1040,7 +1044,7 @@ module FormSection = {
 module Hint = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~actions: 'children=?, ~children: 'children=?, ~className: string=?) =>
+    (~children: 'children=?, ~actions: 'children1=?, ~className: string=?) =>
     React.element =
     "Hint";
 };
@@ -1072,8 +1076,8 @@ module Label = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~closeBtn: 'children=?,
-      ~closeBtnProps: 'any=?,
+      ~closeBtn: 'children1=?,
+      ~closeBtnProps: 'any2=?,
       ~color: [@bs.string] [
                 | [@bs.as "blue"] `Blue
                 | [@bs.as "cyan"] `Cyan
@@ -1085,7 +1089,7 @@ module Label = {
               ]
                 =?,
       ~href: string=?,
-      ~icon: 'children=?,
+      ~icon: 'children3=?,
       ~isOverflowLabel: bool=?,
       ~isTruncated: bool=?,
       ~tooltipPosition: [@bs.string] [
@@ -1110,8 +1114,8 @@ module LabelGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~categoryName: string=?,
       ~children: 'children=?,
+      ~categoryName: string=?,
       ~className: string=?,
       ~closeBtnAriaLabel: string=?,
       ~collapsedText: string=?,
@@ -1159,8 +1163,8 @@ module Login = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~footer: 'children=?,
-      ~header: 'children=?
+      ~footer: 'children1=?,
+      ~header: 'children2=?
     ) =>
     React.element =
     "Login";
@@ -1192,7 +1196,7 @@ module LoginForm = {
     (
       ~className: string=?,
       ~helperText: 'children=?,
-      ~helperTextIcon: 'children=?,
+      ~helperTextIcon: 'children1=?,
       ~isLoginButtonDisabled: bool=?,
       ~isRememberMeChecked: bool=?,
       ~isValidPassword: bool=?,
@@ -1220,7 +1224,7 @@ module LoginHeader = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~headerBrand: 'children=?
+      ~headerBrand: 'children1=?
     ) =>
     React.element =
     "LoginHeader";
@@ -1239,9 +1243,9 @@ module LoginMainFooter = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~forgotCredentials: 'children=?,
-      ~signUpForAccountMessage: 'children=?,
-      ~socialMediaLoginContent: 'children=?
+      ~forgotCredentials: 'children1=?,
+      ~signUpForAccountMessage: 'children2=?,
+      ~socialMediaLoginContent: 'children3=?
     ) =>
     React.element =
     "LoginMainFooter";
@@ -1261,8 +1265,8 @@ module LoginMainFooterLinksItem = {
       ~children: 'children=?,
       ~className: string=?,
       ~href: string=?,
-      ~linkComponent: 'children=?,
-      ~linkComponentProps: 'any=?,
+      ~linkComponent: 'children1=?,
+      ~linkComponentProps: 'any2=?,
       ~target: string=?
     ) =>
     React.element =
@@ -1286,19 +1290,19 @@ module LoginPage = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~children: 'children=?,
       ~backgroundImgAlt: string=?,
       ~backgroundImgSrc: string=?,
       ~brandImgAlt: string=?,
       ~brandImgSrc: string=?,
-      ~children: 'children=?,
       ~className: string=?,
-      ~footerListItems: 'children=?,
+      ~footerListItems: 'children1=?,
       ~footerListVariants: [@bs.string] [ | [@bs.as "inline"] `Inline]=?,
-      ~forgotCredentials: 'children=?,
+      ~forgotCredentials: 'children2=?,
       ~loginSubtitle: string=?,
       ~loginTitle: string,
-      ~signUpForAccountMessage: 'children=?,
-      ~socialMediaLoginContent: 'children=?,
+      ~signUpForAccountMessage: 'children3=?,
+      ~socialMediaLoginContent: 'children4=?,
       ~textContent: string=?
     ) =>
     React.element =
@@ -1345,7 +1349,7 @@ module NavItem = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~component: 'children=?,
+      ~component: 'children1=?,
       ~isActive: bool=?,
       ~onClick: ReactEvent.Mouse.t => unit=?,
       ~preventDefault: bool=?,
@@ -1361,9 +1365,9 @@ module NavList = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~children: 'children=?,
       ~ariaLeftScroll: string=?,
       ~ariaRightScroll: string=?,
-      ~children: 'children=?,
       ~className: string=?,
       ~style: ReactDOM.Style.t=?
     ) =>
@@ -1375,13 +1379,13 @@ module Page = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~additionalGroupedContent: 'children=?,
-      ~breadcrumb: 'children=?,
       ~children: 'children=?,
+      ~additionalGroupedContent: 'children1=?,
+      ~breadcrumb: 'children2=?,
       ~className: string=?,
       ~defaultManagedSidebarIsOpen: bool=?,
-      ~groupProps: 'any=?,
-      ~header: 'children=?,
+      ~groupProps: 'any3=?,
+      ~header: 'children4=?,
       ~isBreadcrumbGrouped: bool=?,
       ~isBreadcrumbWidthLimited: bool=?,
       ~isManagedSidebar: bool=?,
@@ -1390,12 +1394,12 @@ module Page = {
       ~isTertiaryNavWidthLimited: bool=?,
       ~mainAriaLabel: string=?,
       ~mainContainerId: string=?,
-      ~notificationDrawer: 'children=?,
+      ~notificationDrawer: 'children5=?,
       ~role: string=?,
-      ~sidebar: 'children=?,
+      ~sidebar: 'children6=?,
       ~skipToContent: React.element=?,
       ~style: ReactDOM.Style.t=?,
-      ~tertiaryNav: 'children=?
+      ~tertiaryNav: 'children7=?
     ) =>
     React.element =
     "Page";
@@ -1454,12 +1458,12 @@ module PageHeader = {
       ~headerTools: 'children=?,
       ~isManagedSidebar: bool=?,
       ~isNavOpen: bool=?,
-      ~logo: 'children=?,
-      ~logoComponent: 'children=?,
-      ~logoProps: 'any=?,
+      ~logo: 'children1=?,
+      ~logoComponent: 'children2=?,
+      ~logoProps: 'any3=?,
       ~role: string=?,
       ~showNavToggle: bool=?,
-      ~topNav: 'children=?
+      ~topNav: 'children4=?
     ) =>
     React.element =
     "PageHeader";
@@ -1474,7 +1478,7 @@ module PageHeaderTools = {
 module PageHeaderToolsGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~children: 'children, ~className: string=?, ~visibility: 'any=?) =>
+    (~children: 'children, ~className: string=?, ~visibility: 'any1=?) =>
     React.element =
     "PageHeaderToolsGroup";
 };
@@ -1487,7 +1491,7 @@ module PageHeaderToolsItem = {
       ~className: string=?,
       ~id: string=?,
       ~isSelected: bool=?,
-      ~visibility: 'any=?
+      ~visibility: 'any1=?
     ) =>
     React.element =
     "PageHeaderToolsItem";
@@ -1524,7 +1528,7 @@ module PageSection = {
       ~hasShadowTop: bool=?,
       ~isFilled: bool=?,
       ~isWidthLimited: bool=?,
-      ~padding: 'any=?,
+      ~padding: 'any1=?,
       ~sticky: [@bs.string] [
                  | [@bs.as "top"] `Top
                  | [@bs.as "bottom"] `Bottom
@@ -1575,7 +1579,7 @@ module Radio = {
       ~isLabelBeforeButton: bool=?,
       ~isLabelWrapped: bool=?,
       ~isValid: bool=?,
-      ~label: 'children=?,
+      ~label: 'children1=?,
       ~name: string,
       ~onChange: (bool, ReactEvent.Mouse.t) => unit=?
     ) =>
@@ -1625,7 +1629,7 @@ module Tab = {
       ~href: string=?,
       ~isHidden: bool=?,
       ~tabContentId: string=?,
-      ~title: 'children
+      ~title: 'children1
     ) =>
     React.element =
     "Tab";
@@ -1643,9 +1647,9 @@ module TabContent = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~children: 'any=?,
       ~activeKey: string=?,
       ~child: React.element=?,
-      ~children: 'any=?,
       ~className: string=?,
       ~eventKey: string=?,
       ~id: string
@@ -1670,12 +1674,12 @@ module Tabs = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~activeKey: string=?,
       ~children: 'children,
+      ~activeKey: string=?,
       ~className: string=?,
       ~component: [@bs.string] [ | [@bs.as "div"] `Div | [@bs.as "nav"] `Nav]=?,
       ~id: string=?,
-      ~inset: 'any=?,
+      ~inset: 'any1=?,
       ~isBox: bool=?,
       ~isFilled: bool=?,
       ~isSecondary: bool=?,
@@ -1836,7 +1840,7 @@ module Tile = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~icon: 'children=?,
+      ~icon: 'children1=?,
       ~isDisabled: bool=?,
       ~isDisplayLarge: bool=?,
       ~isSelected: bool=?,
@@ -1870,15 +1874,15 @@ module ToolbarContent = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
-      ~alignment: 'any=?,
       ~children: 'children=?,
+      ~alignment: 'any1=?,
       ~className: string=?,
       ~clearFiltersButtonText: string=?,
       ~isExpanded: bool=?,
       ~showClearFiltersButton: bool=?,
       ~toolbarId: string=?,
-      ~visibility: 'any=?,
-      ~visiblity: 'any=?
+      ~visibility: 'any2=?,
+      ~visiblity: 'any3=?
     ) =>
     React.element =
     "ToolbarContent";
