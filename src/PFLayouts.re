@@ -5,6 +5,19 @@ module Bullseye = {
     "Bullseye";
 };
 
+module Gallery = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~hasGutter: bool=?) =>
+    React.element =
+    "Gallery";
+};
+
+module GalleryItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "GalleryItem";
+};
+
 module Grid = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -50,4 +63,59 @@ module GridItem = {
     ) =>
     React.element =
     "GridItem";
+};
+
+module Level = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~hasGutter: bool=?) =>
+    React.element =
+    "Level";
+};
+
+module LevelItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "LevelItem";
+};
+
+module Split = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: 'children1=?,
+      ~hasGutter: bool=?
+    ) =>
+    React.element =
+    "Split";
+};
+
+module SplitItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~isFilled: bool=?) =>
+    React.element =
+    "SplitItem";
+};
+
+module Stack = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: 'children1=?,
+      ~hasGutter: bool=?
+    ) =>
+    React.element =
+    "Stack";
+};
+
+module StackItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~isFilled: bool=?) =>
+    React.element =
+    "StackItem";
 };

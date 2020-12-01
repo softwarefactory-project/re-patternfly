@@ -47,6 +47,15 @@ Components (generated from the typescript interfaces):
 - Title
 - Toolbar
 
+Layouts:
+
+- Bullseye
+- Gallery
+- Grid
+- Level
+- Split
+- Stack
+
 Table component supports this data definition:
 
 ```reason
