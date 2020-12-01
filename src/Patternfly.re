@@ -4,6 +4,8 @@
 // Typescript parser is Typescript.re
 include PFComponents;
 
+include PFTypes;
+
 // https://www.patternfly.org/v4/guidelines/icons/
 //   generated using re-cli
 module Icons = {
