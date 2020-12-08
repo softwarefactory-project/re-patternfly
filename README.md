@@ -135,4 +135,10 @@ npm start
 
 Then build and run tests with `npm test`.
 
+## Changes
+
+### 1.0.0
+
+- Initial release
+
 [patternfly]: https://www.patternfly.org/v4/
