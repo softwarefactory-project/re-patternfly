@@ -1,6 +1,6 @@
 # re-patternfly
 
-ReasonML binding for [patternfly][patternfly].
+ReasonML/ReScript binding for [patternfly][patternfly].
 
 ## Features
 
@@ -135,4 +135,14 @@ npm start
 
 Then build and run tests with `npm test`.
 
+Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
+
+## Changes
+
+### 1.0.0
+
+- Initial release
+
 [patternfly]: https://www.patternfly.org/v4/
+[reason-react]: https://reasonml.github.io/reason-react/docs/en/components
+[rescript-lang]: https://rescript-lang.org/docs/manual/v8.0.0/overview
