@@ -148,9 +148,10 @@ module Alert = {
       ~actionClose: 'children1=?,
       ~actionLinks: 'children2=?,
       ~className: string=?,
+      ~customIcon: 'children3=?,
       ~isInline: bool=?,
       ~isLiveRegion: bool=?,
-      ~title: 'children3,
+      ~title: 'children4,
       ~tooltipPosition: [@bs.string] [
                           | [@bs.as "auto"] `Auto
                           | [@bs.as "top"] `Top
@@ -192,6 +193,7 @@ module AlertIcon = {
   external make:
     (
       ~className: string=?,
+      ~customIcon: 'children=?,
       ~variant: [@bs.string] [
                   | [@bs.as "success"] `Success
                   | [@bs.as "danger"] `Danger
@@ -424,7 +426,9 @@ module Card = {
     (
       ~children: 'children=?,
       ~className: string=?,
+      ~id: string=?,
       ~isCompact: bool=?,
+      ~isExpanded: bool=?,
       ~isFlat: bool=?,
       ~isHoverable: bool=?,
       ~isSelectable: bool=?,
@@ -461,6 +465,18 @@ module CardBody = {
     "CardBody";
 };
 
+module CardExpandableContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~style: ReactDOM.Style.t=?
+    ) =>
+    React.element =
+    "CardExpandableContent";
+};
+
 module CardFooter = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -491,7 +507,9 @@ module CardHeader = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~style: ReactDOM.Style.t=?
+      ~id: string=?,
+      ~style: ReactDOM.Style.t=?,
+      ~toggleButtonProps: 'any1=?
     ) =>
     React.element =
     "CardHeader";
@@ -529,7 +547,6 @@ module Checkbox = {
       ~className: string=?,
       ~description: 'children=?,
       ~id: string,
-      ~isChecked: bool=?,
       ~isDisabled: bool=?,
       ~isValid: bool=?,
       ~label: 'children1=?,
@@ -617,9 +634,11 @@ module DescriptionList = {
   external make:
     (
       ~children: 'children=?,
+      ~autoFitMinModifier: 'any1=?,
       ~className: string=?,
-      ~columnModifier: 'any1=?,
+      ~columnModifier: 'any2=?,
       ~isAutoColumnWidths: bool=?,
+      ~isAutoFit: bool=?,
       ~isHorizontal: bool=?,
       ~isInlineGrid: bool=?
     ) =>
@@ -665,7 +684,8 @@ module Divider = {
 
 module DrawerContext = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~isExpanded: bool, ~isStatic: bool) => React.element =
+  external make:
+    (~isExpanded: bool, ~isStatic: bool, ~position: string=?) => React.element =
     "DrawerContext";
 };
 
@@ -736,6 +756,12 @@ module DrawerPanelContent = {
       ~children: 'children=?,
       ~className: string=?,
       ~hasNoBorder: bool=?,
+      ~increment: int=?,
+      ~isResizable: bool=?,
+      ~maxSize: int=?,
+      ~minSize: int=?,
+      ~resizeAriaDescribedBy: string=?,
+      ~resizeAriaLabel: string=?,
       ~widths: 'any1=?
     ) =>
     React.element =
@@ -865,6 +891,7 @@ module InternalDropdownItem = {
       ~icon: 'children6=?,
       ~id: string=?,
       ~index: int=?,
+      ~inoperableEvents: array(string)=?,
       ~isDisabled: bool=?,
       ~isHovered: bool=?,
       ~isPlainText: bool=?,
@@ -1070,46 +1097,6 @@ module HintTitle = {
     "HintTitle";
 };
 
-module Label = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~children: 'children=?,
-      ~className: string=?,
-      ~closeBtn: 'children1=?,
-      ~closeBtnProps: 'any2=?,
-      ~color: [@bs.string] [
-                | [@bs.as "blue"] `Blue
-                | [@bs.as "cyan"] `Cyan
-                | [@bs.as "green"] `Green
-                | [@bs.as "orange"] `Orange
-                | [@bs.as "purple"] `Purple
-                | [@bs.as "red"] `Red
-                | [@bs.as "grey"] `Grey
-              ]
-                =?,
-      ~href: string=?,
-      ~icon: 'children3=?,
-      ~isOverflowLabel: bool=?,
-      ~isTruncated: bool=?,
-      ~tooltipPosition: [@bs.string] [
-                          | [@bs.as "auto"] `Auto
-                          | [@bs.as "top"] `Top
-                          | [@bs.as "bottom"] `Bottom
-                          | [@bs.as "left"] `Left
-                          | [@bs.as "right"] `Right
-                        ]
-                          =?,
-      ~variant: [@bs.string] [
-                  | [@bs.as "outline"] `Outline
-                  | [@bs.as "filled"] `Filled
-                ]
-                  =?
-    ) =>
-    React.element =
-    "Label";
-};
-
 module LabelGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -1309,25 +1296,56 @@ module LoginPage = {
     "LoginPage";
 };
 
-module Nav = {
+module MenuContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "MenuContent";
+};
+
+module MenuGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~onSelect: 'callback=?,
-      ~onToggle: 'callback=?,
-      ~theme: [@bs.string] [ | [@bs.as "dark"] `Dark | [@bs.as "light"] `Light]
-                =?,
-      ~variant: [@bs.string] [
-                  | [@bs.as "default"] `Default
-                  | [@bs.as "horizontal"] `Horizontal
-                  | [@bs.as "tertiary"] `Tertiary
-                ]
-                  =?
+      ~label: string=?,
+      ~titleId: string=?
     ) =>
     React.element =
-    "Nav";
+    "MenuGroup";
+};
+
+module MenuInput = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "MenuInput";
+};
+
+module MenuItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~actions: 'children1=?,
+      ~className: string=?,
+      ~component: 'children2=?,
+      ~description: 'children3=?,
+      ~flyoutMenu: 'children4=?,
+      ~icon: 'children5=?,
+      ~isActive: bool=?,
+      ~isDisabled: bool=?,
+      ~isExternalLink: bool=?,
+      ~isFavorited: bool=?,
+      ~isSelected: bool=?,
+      ~itemId: 'any6=?,
+      ~_to: string=?
+    ) =>
+    React.element =
+    "MenuItem";
+};
+
+module MenuList = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "MenuList";
 };
 
 module NavGroup = {
@@ -1566,27 +1584,6 @@ module PageSidebar = {
     "PageSidebar";
 };
 
-module Radio = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~checked: bool=?,
-      ~className: string=?,
-      ~description: 'children=?,
-      ~id: string,
-      ~isChecked: bool=?,
-      ~isDisabled: bool=?,
-      ~isLabelBeforeButton: bool=?,
-      ~isLabelWrapped: bool=?,
-      ~isValid: bool=?,
-      ~label: 'children1=?,
-      ~name: string,
-      ~onChange: (bool, ReactEvent.Mouse.t) => unit=?
-    ) =>
-    React.element =
-    "Radio";
-};
-
 module Spinner = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -1602,21 +1599,6 @@ module Spinner = {
     ) =>
     React.element =
     "Spinner";
-};
-
-module Splitter = {
-  [@react.component] [@bs.module "@patternfly/react-core"]
-  external make:
-    (
-      ~className: string=?,
-      ~orientation: [@bs.string] [
-                      | [@bs.as "horizontal"] `Horizontal
-                      | [@bs.as "vertical"] `Vertical
-                    ]
-                      =?
-    ) =>
-    React.element =
-    "Splitter";
 };
 
 module Tab = {
@@ -1769,6 +1751,8 @@ module TextArea = {
   external make:
     (
       ~className: string=?,
+      ~isDisabled: bool=?,
+      ~isReadOnly: bool=?,
       ~isRequired: bool=?,
       ~resizeOrientation: [@bs.string] [
                             | [@bs.as "horizontal"] `Horizontal
@@ -1799,6 +1783,7 @@ module TextInput = {
       ~iconVariant: [@bs.string] [
                       | [@bs.as "calendar"] `Calendar
                       | [@bs.as "clock"] `Clock
+                      | [@bs.as "search"] `Search
                     ]
                       =?,
       ~id: string,

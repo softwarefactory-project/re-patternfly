@@ -25,7 +25,7 @@ Components (generated from the typescript interfaces):
 - DescriptionList
 - Divider
 - Drawer
-- Drawer
+- Menu
 - Dropdown
 - EmptyState
 - Form
