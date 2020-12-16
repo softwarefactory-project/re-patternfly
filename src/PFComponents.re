@@ -721,6 +721,21 @@ module DrawerContentBody = {
     "DrawerContentBody";
 };
 
+module DrawerHead = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~hasNoPadding: bool=?) =>
+    React.element =
+    "DrawerHead";
+};
+
+module DrawerMain = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "DrawerMain";
+};
+
 module DrawerPanelBody = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -847,6 +862,21 @@ module DropdownToggleAction = {
     "DropdownToggleAction";
 };
 
+module DropdownToggleCheckbox = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~id: string,
+      ~isDisabled: bool=?,
+      ~isValid: bool=?,
+      ~onChange: (bool, ReactEvent.Mouse.t) => unit=?
+    ) =>
+    React.element =
+    "DropdownToggleCheckbox";
+};
+
 module InternalDropdownItem = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -900,6 +930,32 @@ module KebabToggle = {
     ) =>
     React.element =
     "KebabToggle";
+};
+
+module Toggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~bubbleEvent: bool=?,
+      ~className: string=?,
+      ~id: string,
+      ~isActive: bool=?,
+      ~isDisabled: bool=?,
+      ~isOpen: bool=?,
+      ~isPlain: bool=?,
+      ~isPrimary: bool=?,
+      ~isSplitButton: bool=?,
+      ~parentRef: 'any1=?,
+      ~_type: [@bs.string] [
+                | [@bs.as "button"] `Button
+                | [@bs.as "submit"] `Submit
+                | [@bs.as "reset"] `Reset
+              ]
+                =?
+    ) =>
+    React.element =
+    "Toggle";
 };
 
 module EmptyState = {
@@ -1328,6 +1384,23 @@ module Nav = {
     ) =>
     React.element =
     "Nav";
+};
+
+module NavExpandable = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~groupId: string=?,
+      ~id: string=?,
+      ~isActive: bool=?,
+      ~isExpanded: bool=?,
+      ~srText: string=?,
+      ~title: string
+    ) =>
+    React.element =
+    "NavExpandable";
 };
 
 module NavGroup = {
