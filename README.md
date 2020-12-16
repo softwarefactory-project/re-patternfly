@@ -34,11 +34,11 @@ Components (generated from the typescript interfaces):
 - LabelGroup
 - List
 - LoginPage
+- Menu
 - Nav
 - Page
 - Radio
 - Spinner
-- Splitter
 - Tabs
 - Text
 - TextArea
