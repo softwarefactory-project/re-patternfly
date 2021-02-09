@@ -8,22 +8,13 @@ This project uses:
 - `parcel` to serve and bundle the code.
 - `jest` to run ReactTestUtils.
 
-Using yarn (this works better for cross project linking with path):
+Using pnpm:
 
 ```
-yarn install
-yarn build
-yarn test
-yarn start & yarn serve
-```
-
-Or using npm (when using non local dependencies):
-
-```
-npm install
-npm run build
-npm run test
-npm run start & npm run serve
+pnpm install
+pnpm build
+pnpm test
+pnpm start & pnpm serve
 ```
 
 Then open browser on `http://localhost:1234`
@@ -31,6 +22,6 @@ Then open browser on `http://localhost:1234`
 Distribute with:
 
 ```
-npm run dist
+pnpm run dist
 # Open browser in dist/
 ```

@@ -17,10 +17,10 @@
       "dir": "src"
     },
     {
-      "dir": "tests",
+      "dir": "__tests__",
       "type": "dev"
     }
   ],
-  "bs-dependencies": ["reason-react"],
+  "bs-dependencies": ["@rescript/react"],
   "bs-dev-dependencies": ["@glennsl/bs-jest"]
 }

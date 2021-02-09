@@ -85,13 +85,7 @@ let make = () => {
 Add to your `package.json`:
 
 ```
-npm install @softwarefactory-project/re-patternfly
-```
-
-Or using yarn:
-
-```
-yarn add @softwarefactory-project/re-patternfly
+pnpm add @softwarefactory-project/re-patternfly
 ```
 
 Add to your `bsconfig.json`:
@@ -104,8 +98,8 @@ Add to your `bsconfig.json`:
 
 ## Example
 
-```reason
-[@react.component]
+```rescript
+@react.component
 let make = () => {
   <Patternfly.List>
     <Patternfly.ListItem>
@@ -129,15 +123,20 @@ Get started by running:
 ```sh
 git clone https://github.com/softwarefactory-project/re-patternfly
 cd re-patternfly
-npm install
-npm start
+pnpm install
+pnpm start
 ```
 
-Then build and run tests with `npm test`.
+Then build and run tests with `pnpm test`.
 
 Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
+
+### 2.0.0
+
+- Replace reason-react with rescript/react
+- Replace yarn package manager with pnpm
 
 ### 1.0.0
 
