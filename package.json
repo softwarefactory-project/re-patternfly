@@ -1,22 +1,19 @@
 {
   "name": "@softwarefactory-project/re-patternfly",
-  "version": "1.0.0",
-  "description": "ReasonML binding for Patternfly",
+  "version": "2.0.0",
+  "description": "ReScript binding for Patternfly",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world",
-    "test": "jest --verbose --testMatch **/tests/*.bs.js"
+    "test": "jest --verbose"
   },
   "keywords": [
-    "ReasonReact",
     "patternfly",
-    "reason",
-    "reason-react",
-    "reasonml",
-    "reasonml-bindings",
-    "bucklescript",
-    "bucklescript-bindings"
+    "react",
+    "rescript-react",
+    "rescript",
+    "recript-bindings"
   ],
   "author": "softwarefactory-dev@redhat.com",
   "license": "Apache-2.0",
@@ -34,11 +31,11 @@
     "react-dom": "^16.13.1"
   },
   "dependencies": {
-    "reason-react": "^0.9.1"
+    "@rescript/react": "^0.10.1"
   },
   "jest": {
     "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/tests/styleMock.js"
+      "\\.(css|less)$": "<rootDir>/__tests__/styleMock.css"
     }
   },
   "main": "index.js"

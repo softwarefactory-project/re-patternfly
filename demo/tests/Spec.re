@@ -10,7 +10,7 @@ describe("Basic test", () => {
   test("can render the App", () => {
     let container = getContainer(container);
 
-    act(() => {ReactDOMRe.render(<App />, container)});
+    act(() => {ReactDOM.render(<App />, container)});
 
     expect(
       container

@@ -10,10 +10,9 @@
     "dist": "parcel build ./src/index.html --public-url /"
   },
   "keywords": [
-    "ReasonReact",
     "patternfly",
-    "reason",
-    "reason-react",
+    "react",
+    "rescript-react",
     "rescript"
   ],
   "license": "Apache-2.0",
@@ -21,12 +20,13 @@
     "@patternfly/react-core": "^4.50.2",
     "@patternfly/react-icons": "^4.7.12",
     "@patternfly/react-table": "^4.18.14",
-    "@softwarefactory-project/re-patternfly": "..",
+    "@softwarefactory-project/re-patternfly": "file:///..",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.5.1",
+    "jest": "^26.5.0",
     "bs-platform": "^8.2.0",
     "parcel": "^1.12.4"
   },

@@ -7,7 +7,7 @@ open Patternfly.Layout;
 let assertDom = (container, component, expectFunc) => {
   let container = getContainer(container);
 
-  act(() => {ReactDOMRe.render(component, container)});
+  act(() => {ReactDOM.render(component, container)});
 
   expectFunc(container);
 };

@@ -1,12 +1,12 @@
 - job:
-    name: npm-test-demo
-    parent: npm-test
+    name: pnpm-test-demo
+    parent: pnpm-test
     vars:
       project_root: "demo"
 
 - project:
     check: &jobs
       jobs:
-        - npm-test
-        - npm-test-demo
+        - pnpm-test
+        - pnpm-test-demo
     gate: *jobs
