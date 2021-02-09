@@ -10,10 +10,7 @@
       "type": "dev"
     }
   ],
-  "bsc-flags": [
-    "-bs-super-errors",
-    "-bs-no-version-header"
-  ],
+  "bsc-flags": ["-bs-super-errors", "-bs-no-version-header"],
   "package-specs": [
     {
       "module": "commonjs",
@@ -22,12 +19,10 @@
   ],
   "suffix": ".bs.js",
   "bs-dependencies": [
-    "reason-react",
+    "@rescript/react",
     "@softwarefactory-project/re-patternfly"
   ],
-  "bs-dev-dependencies": [
-    "@glennsl/bs-jest"
-  ],
+  "bs-dev-dependencies": ["@glennsl/bs-jest"],
   "namespace": true,
   "refmt": 3
 }
