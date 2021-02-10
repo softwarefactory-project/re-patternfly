@@ -21,17 +21,17 @@
     "url": "https://github.com/softwarefactory-project/re-patternfly/issues"
   },
   "homepage": "https://github.com/softwarefactory-project/re-patternfly#readme",
-  "files": ["src/*.re", "bsconfig.json"],
+  "files": ["src/*.re", "bsconfig.json", "README.md"],
+  "dependencies": {
+    "@rescript/react": "^0.10.1"
+  },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.5.1",
     "@patternfly/react-core": "^4.50.2",
     "bs-platform": "^8.4.0",
     "jest": "^26.5.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "dependencies": {
-    "@rescript/react": "^0.10.1"
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
   },
   "jest": {
     "moduleNameMapper": {
