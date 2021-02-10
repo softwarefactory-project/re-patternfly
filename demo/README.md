@@ -11,7 +11,7 @@ This project uses:
 Using pnpm:
 
 ```
-pnpm install
+pnpm install --shamefully-hoist
 pnpm build
 pnpm test
 pnpm start & pnpm serve
