@@ -10,6 +10,7 @@ module AboutModal = {
       ~closeButtonAriaLabel: string=?,
       ~isOpen: bool=?,
       ~noAboutModalBoxContentContainer: bool=?,
+      ~onClose: unit => unit=?,
       ~productName: string=?,
       ~trademark: string=?
     ) =>
@@ -32,7 +33,8 @@ module AboutModalBoxBrand = {
 
 module AboutModalBoxCloseButton = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~className: string=?) => React.element =
+  external make:
+    (~className: string=?, ~onClose: unit => unit=?) => React.element =
     "AboutModalBoxCloseButton";
 };
 
@@ -78,6 +80,7 @@ module AboutModalContainer = {
       ~className: string=?,
       ~closeButtonAriaLabel: string=?,
       ~isOpen: bool=?,
+      ~onClose: unit => unit=?,
       ~productName: string=?,
       ~trademark: string=?
     ) =>
@@ -151,6 +154,7 @@ module Alert = {
       ~customIcon: 'children3=?,
       ~isInline: bool=?,
       ~isLiveRegion: bool=?,
+      ~onTimeout: unit => unit=?,
       ~title: 'children4,
       ~tooltipPosition: [@bs.string] [
                           | [@bs.as "auto"] `Auto
@@ -178,7 +182,12 @@ module Alert = {
 module AlertActionCloseButton = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~className: string=?, ~variantLabel: string=?) => React.element =
+    (
+      ~className: string=?,
+      ~onClose: unit => unit=?,
+      ~variantLabel: string=?
+    ) =>
+    React.element =
     "AlertActionCloseButton";
 };
 
@@ -687,7 +696,13 @@ module Divider = {
 module DrawerContext = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~isExpanded: bool, ~isStatic: bool, ~position: string=?) => React.element =
+    (
+      ~isExpanded: bool,
+      ~isStatic: bool,
+      ~onExpand: unit => unit=?,
+      ~position: string=?
+    ) =>
+    React.element =
     "DrawerContext";
 };
 
@@ -700,6 +715,7 @@ module Drawer = {
       ~isExpanded: bool=?,
       ~isInline: bool=?,
       ~isStatic: bool=?,
+      ~onExpand: unit => unit=?,
       ~position: [@bs.string] [
                    | [@bs.as "left"] `Left
                    | [@bs.as "right"] `Right
@@ -720,7 +736,9 @@ module DrawerActions = {
 
 module DrawerCloseButton = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~className: string=?) => React.element = "DrawerCloseButton";
+  external make:
+    (~className: string=?, ~onClose: unit => unit=?) => React.element =
+    "DrawerCloseButton";
 };
 
 module DrawerContent = {
@@ -979,6 +997,7 @@ module Toggle = {
       ~isPlain: bool=?,
       ~isPrimary: bool=?,
       ~isSplitButton: bool=?,
+      ~onEnter: unit => unit=?,
       ~parentRef: 'any1=?,
       ~_type: [@bs.string] [
                 | [@bs.as "button"] `Button
@@ -1570,6 +1589,7 @@ module Page = {
       ~mainContainerId: string=?,
       ~mainTabIndex: int=?,
       ~notificationDrawer: 'children5=?,
+      ~onNotificationDrawerExpand: unit => unit=?,
       ~role: string=?,
       ~sidebar: 'children6=?,
       ~skipToContent: React.element=?,
@@ -1582,7 +1602,9 @@ module Page = {
 
 module PageContext = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~isManagedSidebar: bool, ~isNavOpen: bool) => React.element =
+  external make:
+    (~isManagedSidebar: bool, ~isNavOpen: bool, ~onNavToggle: unit => unit) =>
+    React.element =
     "PageContext";
 };
 
@@ -1636,6 +1658,7 @@ module PageHeader = {
       ~logo: 'children1=?,
       ~logoComponent: 'children2=?,
       ~logoProps: 'any3=?,
+      ~onNavToggle: unit => unit=?,
       ~role: string=?,
       ~showNavToggle: bool=?,
       ~topNav: 'children4=?
@@ -2040,6 +2063,7 @@ module ToolbarContent = {
       ~children: 'children=?,
       ~alignment: 'any1=?,
       ~className: string=?,
+      ~clearAllFilters: unit => unit=?,
       ~clearFiltersButtonText: string=?,
       ~isExpanded: bool=?,
       ~showClearFiltersButton: bool=?,
@@ -2063,6 +2087,7 @@ module ToolbarExpandableContent = {
   external make:
     (
       ~className: string=?,
+      ~clearAllFilters: unit => unit=?,
       ~clearFiltersButtonText: string=?,
       ~isExpanded: bool=?,
       ~showClearFiltersButton: bool
