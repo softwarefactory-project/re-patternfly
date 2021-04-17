@@ -2102,3 +2102,97 @@ module ToolbarFilter = {
     (~children: 'children, ~showToolbarItem: bool=?) => React.element =
     "ToolbarFilter";
 };
+
+module ToolbarItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~alignment: 'any1=?,
+      ~className: string=?,
+      ~id: string=?,
+      ~isAllExpanded: bool=?,
+      ~spacer: 'any2=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "ToolbarItemVariant"] `ToolbarItemVariant
+                  | [@bs.as "bulk-select"] `Bulkselect
+                  | [@bs.as "overflow-menu"] `Overflowmenu
+                  | [@bs.as "pagination"] `Pagination
+                  | [@bs.as "search-filter"] `Searchfilter
+                  | [@bs.as "label"] `Label
+                  | [@bs.as "chip-group"] `Chipgroup
+                  | [@bs.as "separator"] `Separator
+                  | [@bs.as "expand-all"] `Expandall
+                ]
+                  =?,
+      ~visibility: 'any3=?,
+      ~visiblity: 'any4=?
+    ) =>
+    React.element =
+    "ToolbarItem";
+};
+
+module Tooltip = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~animationDuration: int=?,
+      ~aria: [@bs.string] [
+               | [@bs.as "describedby"] `Describedby
+               | [@bs.as "labelledby"] `Labelledby
+               | [@bs.as "none"] `None
+             ]
+               =?,
+      ~boundary: [@bs.string] [
+                   | [@bs.as "scrollParent"] `ScrollParent
+                   | [@bs.as "window"] `Window
+                   | [@bs.as "viewport"] `Viewport
+                 ]
+                   =?,
+      ~className: string=?,
+      ~content: 'children,
+      ~distance: int=?,
+      ~enableFlip: bool=?,
+      ~entryDelay: int=?,
+      ~exitDelay: int=?,
+      ~flipBehavior: [@bs.string] [
+                       | [@bs.as "flip"] `Flip
+                       | [@bs.as "top"] `Top
+                       | [@bs.as "bottom"] `Bottom
+                       | [@bs.as "left"] `Left
+                       | [@bs.as "right"] `Right
+                     ]
+                       =?,
+      ~id: string=?,
+      ~isAppLauncher: bool=?,
+      ~isContentLeftAligned: bool=?,
+      ~isVisible: bool=?,
+      ~maxWidth: string=?,
+      ~position: [@bs.string] [
+                   | [@bs.as "auto"] `Auto
+                   | [@bs.as "top"] `Top
+                   | [@bs.as "bottom"] `Bottom
+                   | [@bs.as "left"] `Left
+                   | [@bs.as "right"] `Right
+                 ]
+                   =?,
+      ~trigger: string=?,
+      ~zIndex: int=?
+    ) =>
+    React.element =
+    "Tooltip";
+};
+
+module TooltipArrow = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~className: string=?) => React.element = "TooltipArrow";
+};
+
+module TooltipContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children, ~className: string=?, ~isLeftAligned: bool=?) =>
+    React.element =
+    "TooltipContent";
+};

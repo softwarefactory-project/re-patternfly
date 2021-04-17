@@ -46,6 +46,7 @@ Components (generated from the typescript interfaces):
 - Tile
 - Title
 - Toolbar
+- Tooltip
 
 Layouts:
 
@@ -132,6 +133,10 @@ Then build and run tests with `pnpm test`.
 Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
+
+### 2.0.1
+
+- Add Tooltip
 
 ### 2.0.0
 
