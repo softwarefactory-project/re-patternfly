@@ -518,6 +518,7 @@ module CardHeader = {
       ~children: 'children=?,
       ~className: string=?,
       ~id: string=?,
+      ~onExpand: (ReactEvent.Mouse.t, string) => unit=?,
       ~style: ReactDOM.Style.t=?,
       ~toggleButtonProps: 'any1=?
     ) =>
@@ -638,6 +639,25 @@ module ClipboardCopyToggle = {
     ) =>
     React.element =
     "ClipboardCopyToggle";
+};
+
+module DatePicker = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~buttonAriaLabel: string=?,
+      ~className: string=?,
+      ~helperText: 'children=?,
+      ~id: string,
+      ~invalidFormatText: string=?,
+      ~isDisabled: bool=?,
+      ~onChange: (string, Js.Date.t) => unit=?,
+      ~placeholder: string=?,
+      ~placeholder: string=?,
+      ~value: string=?
+    ) =>
+    React.element =
+    "DatePicker";
 };
 
 module DescriptionList = {
@@ -2008,6 +2028,7 @@ module TextInput = {
       ~isRequired: bool=?,
       ~onChange: (string, ReactEvent.Mouse.t) => unit=?,
       ~placeholder: string=?,
+      ~style: ReactDOM.Style.t=?,
       ~_type: [@bs.string] [
                 | [@bs.as "text"] `Text
                 | [@bs.as "date"] `Date

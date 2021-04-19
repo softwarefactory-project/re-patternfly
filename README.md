@@ -22,6 +22,7 @@ Components (generated from the typescript interfaces):
 - Card
 - Checkbox
 - ClipboardCopy
+- DatePicker
 - DescriptionList
 - Divider
 - Drawer
@@ -136,6 +137,7 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ### 2.0.1
 
+- Add DatePicker
 - Add Tooltip
 - Add TextInput placeholder
 - Add Toolbar and InputGroup
