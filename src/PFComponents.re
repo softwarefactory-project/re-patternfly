@@ -1993,6 +1993,7 @@ module TextInput = {
       ~isReadOnly: bool=?,
       ~isRequired: bool=?,
       ~onChange: (string, ReactEvent.Mouse.t) => unit=?,
+      ~placeholder: string=?,
       ~_type: [@bs.string] [
                 | [@bs.as "text"] `Text
                 | [@bs.as "date"] `Date
