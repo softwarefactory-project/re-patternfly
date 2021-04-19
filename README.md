@@ -137,6 +137,8 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 ### 2.0.1
 
 - Add Tooltip
+- Add TextInput placeholder
+- Add Toolbar and InputGroup
 
 ### 2.0.0
 

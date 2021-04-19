@@ -1178,6 +1178,20 @@ module HintTitle = {
     "HintTitle";
 };
 
+module InputGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children, ~className: string=?) => React.element =
+    "InputGroup";
+};
+
+module InputGroupText = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children, ~className: string=?, ~component: 'children1=?) =>
+    React.element =
+    "InputGroupText";
+};
+
 module Label = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -2057,6 +2071,53 @@ module Title = {
     "Title";
 };
 
+module Toolbar = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~clearAllFilters: unit => unit=?,
+      ~clearFiltersButtonText: string=?,
+      ~collapseListedFiltersBreakpoint: [@bs.string] [
+                                          | [@bs.as "all"] `All
+                                          | [@bs.as "md"] `Md
+                                          | [@bs.as "lg"] `Lg
+                                          | [@bs.as "xl"] `Xl
+                                        ]
+                                          =?,
+      ~id: string=?,
+      ~inset: 'any1=?,
+      ~isExpanded: bool=?,
+      ~toggleIsExpanded: unit => unit=?,
+      ~usePageInsets: bool=?
+    ) =>
+    React.element =
+    "Toolbar";
+};
+
+module ToolbarChipGroupContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~clearAllFilters: unit => unit=?,
+      ~clearFiltersButtonText: string=?,
+      ~collapseListedFiltersBreakpoint: [@bs.string] [
+                                          | [@bs.as "all"] `All
+                                          | [@bs.as "md"] `Md
+                                          | [@bs.as "lg"] `Lg
+                                          | [@bs.as "xl"] `Xl
+                                        ]
+                                          =?,
+      ~isExpanded: bool=?,
+      ~numberOfFilters: int,
+      ~showClearFiltersButton: bool
+    ) =>
+    React.element =
+    "ToolbarChipGroupContent";
+};
+
 module ToolbarContent = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -2069,8 +2130,7 @@ module ToolbarContent = {
       ~isExpanded: bool=?,
       ~showClearFiltersButton: bool=?,
       ~toolbarId: string=?,
-      ~visibility: 'any2=?,
-      ~visiblity: 'any3=?
+      ~visibility: 'any2=?
     ) =>
     React.element =
     "ToolbarContent";
@@ -2126,11 +2186,29 @@ module ToolbarItem = {
                   | [@bs.as "expand-all"] `Expandall
                 ]
                   =?,
-      ~visibility: 'any3=?,
-      ~visiblity: 'any4=?
+      ~visibility: 'any3=?
     ) =>
     React.element =
     "ToolbarItem";
+};
+
+module ToolbarToggleGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~alignment: 'any=?,
+      ~breakpoint: [@bs.string] [
+                     | [@bs.as "md"] `Md
+                     | [@bs.as "lg"] `Lg
+                     | [@bs.as "xl"] `Xl
+                   ],
+      ~spaceItems: 'any1=?,
+      ~spacer: 'any2=?,
+      ~toggleIcon: 'children3,
+      ~visibility: 'any4=?
+    ) =>
+    React.element =
+    "ToolbarToggleGroup";
 };
 
 module Tooltip = {
