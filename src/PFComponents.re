@@ -643,6 +643,181 @@ module ClipboardCopyToggle = {
     "ClipboardCopyToggle";
 };
 
+module DataList = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~gridBreakpoint: [@bs.string] [
+                         | [@bs.as "none"] `None
+                         | [@bs.as "always"] `Always
+                         | [@bs.as "sm"] `Sm
+                         | [@bs.as "md"] `Md
+                         | [@bs.as "lg"] `Lg
+                         | [@bs.as "xl"] `Xl
+                       ]
+                         =?,
+      ~isCompact: bool=?,
+      ~itemOrder: array(string)=?,
+      ~onDragCancel: unit => unit=?,
+      ~selectedDataListItemId: string=?
+    ) =>
+    React.element =
+    "DataList";
+};
+
+module DataListAction = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~id: string,
+      ~isPlainButtonAction: bool=?,
+      ~visibility: 'any1=?
+    ) =>
+    React.element =
+    "DataListAction";
+};
+
+module DataListCell = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~alignRight: bool=?,
+      ~className: string=?,
+      ~isFilled: bool=?,
+      ~isIcon: bool=?,
+      ~width: [@bs.string] [
+                | [@bs.as "_1"] `_1
+                | [@bs.as "_2"] `_2
+                | [@bs.as "_3"] `_3
+                | [@bs.as "_4"] `_4
+                | [@bs.as "_5"] `_5
+              ]
+                =?
+    ) =>
+    React.element =
+    "DataListCell";
+};
+
+module DataListCheck = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~checked: bool=?,
+      ~className: string=?,
+      ~isChecked: bool=?,
+      ~isDisabled: bool=?,
+      ~isValid: bool=?,
+      ~onChange: (bool, ReactEvent.Mouse.t) => unit=?,
+      ~otherControls: bool=?
+    ) =>
+    React.element =
+    "DataListCheck";
+};
+
+module DataListContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~hasNoPadding: bool=?,
+      ~id: string=?,
+      ~isHidden: bool=?,
+      ~rowid: string=?
+    ) =>
+    React.element =
+    "DataListContent";
+};
+
+module DataListControl = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "DataListControl";
+};
+
+module DataListDragButton = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~isDisabled: bool=?,
+      ~_type: [@bs.string] [
+                | [@bs.as "button"] `Button
+                | [@bs.as "submit"] `Submit
+                | [@bs.as "reset"] `Reset
+              ]
+                =?
+    ) =>
+    React.element =
+    "DataListDragButton";
+};
+
+module DataListItemChild = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~rowid: string) => React.element = "DataListItemChild";
+};
+
+module DataListItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~id: string=?,
+      ~isExpanded: bool=?
+    ) =>
+    React.element =
+    "DataListItem";
+};
+
+module DataListItemCells = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~className: string=?, ~dataListCells: 'children=?, ~rowid: string=?) =>
+    React.element =
+    "DataListItemCells";
+};
+
+module DataListItemRow = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children, ~className: string=?, ~rowid: string=?) =>
+    React.element =
+    "DataListItemRow";
+};
+
+module DataListText = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~component: 'children1=?,
+      ~tooltip: string=?
+    ) =>
+    React.element =
+    "DataListText";
+};
+
+module DataListToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~id: string,
+      ~isExpanded: bool=?,
+      ~rowid: string=?
+    ) =>
+    React.element =
+    "DataListToggle";
+};
+
 module DatePicker = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
