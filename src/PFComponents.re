@@ -234,6 +234,8 @@ module ApplicationLauncher = {
       ~isGrouped: bool=?,
       ~isOpen: bool=?,
       ~items: array('children)=?,
+      ~onSelect: unit => unit=?,
+      ~onToggle: bool => unit=?,
       ~searchNoResultsText: string=?,
       ~searchPlaceholderText: string=?,
       ~searchProps: 'any=?,
@@ -841,6 +843,7 @@ module Dropdown = {
       ~isGrouped: bool=?,
       ~isOpen: bool=?,
       ~isPlain: bool=?,
+      ~onSelect: unit => unit=?,
       ~toggle: React.element
     ) =>
     React.element =
@@ -899,6 +902,7 @@ module DropdownToggle = {
       ~isOpen: bool=?,
       ~isPlain: bool=?,
       ~isPrimary: bool=?,
+      ~onToggle: bool => unit=?,
       ~splitButtonItems: array('children)=?,
       ~splitButtonVariant: [@bs.string] [
                              | [@bs.as "action"] `Action
@@ -991,6 +995,7 @@ module KebabToggle = {
       ~isDisabled: bool=?,
       ~isOpen: bool=?,
       ~isPlain: bool=?,
+      ~onToggle: bool => unit=?,
       ~parentRef: 'any1=?,
       ~_type: [@bs.string] [
                 | [@bs.as "button"] `Button
@@ -1018,6 +1023,7 @@ module Toggle = {
       ~isPrimary: bool=?,
       ~isSplitButton: bool=?,
       ~onEnter: unit => unit=?,
+      ~onToggle: bool => unit=?,
       ~parentRef: 'any1=?,
       ~_type: [@bs.string] [
                 | [@bs.as "button"] `Button
@@ -1459,7 +1465,8 @@ module Menu = {
       ~activeItemId: 'any1=?,
       ~className: string=?,
       ~containsFlyout: bool=?,
-      ~hasSearchInput: bool=?
+      ~hasSearchInput: bool=?,
+      ~onSelect: unit => unit=?
     ) =>
     React.element =
     "Menu";
@@ -1523,8 +1530,8 @@ module Nav = {
     (
       ~children: 'children=?,
       ~className: string=?,
-      ~onSelect: 'callback=?,
-      ~onToggle: 'callback=?,
+      ~onSelect: unit => unit=?,
+      ~onToggle: bool => unit=?,
       ~theme: [@bs.string] [ | [@bs.as "dark"] `Dark | [@bs.as "light"] `Light]
                 =?,
       ~variant: [@bs.string] [
@@ -1819,6 +1826,147 @@ module Radio = {
     "Radio";
 };
 
+module Select = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: React.element=?,
+      ~chipGroupComponent: 'children=?,
+      ~className: string=?,
+      ~clearSelectionsAriaLabel: string=?,
+      ~createText: string=?,
+      ~customBadgeText: string=?,
+      ~customContent: 'children1=?,
+      ~direction: [@bs.string] [ | [@bs.as "up"] `Up | [@bs.as "down"] `Down]=?,
+      ~favorites: array(string)=?,
+      ~favoritesLabel: string=?,
+      ~hasInlineFilter: bool=?,
+      ~inlineFilterPlaceholderText: string=?,
+      ~inputIdPrefix: string=?,
+      ~isCheckboxSelectionBadgeHidden: bool=?,
+      ~isCreatable: bool=?,
+      ~isDisabled: bool=?,
+      ~isGrouped: bool=?,
+      ~isOpen: bool=?,
+      ~isPlain: bool=?,
+      ~maxHeight: string=?,
+      ~noResultsFoundText: string=?,
+      ~onSelect: (unit, string, bool) => unit=?,
+      ~onToggle: bool => unit,
+      ~placeholderText: string=?,
+      ~removeSelectionAriaLabel: string=?,
+      ~selections: array(string)=?,
+      ~toggleAriaLabel: string=?,
+      ~toggleIcon: React.element=?,
+      ~toggleId: string=?,
+      ~typeAheadAriaLabel: string=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "single"] `Single
+                  | [@bs.as "checkbox"] `Checkbox
+                  | [@bs.as "typeahead"] `Typeahead
+                  | [@bs.as "typeaheadmulti"] `Typeaheadmulti
+                ]
+                  =?,
+      ~width: string=?
+    ) =>
+    React.element =
+    "Select";
+};
+
+module SelectGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~label: string=?,
+      ~titleId: string=?
+    ) =>
+    React.element =
+    "SelectGroup";
+};
+
+module SelectMenu = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~createText: string=?,
+      ~hasInlineFilter: bool=?,
+      ~innerRef: 'any=?,
+      ~isCustomContent: bool=?,
+      ~isExpanded: bool=?,
+      ~isGrouped: bool=?,
+      ~maxHeight: string=?,
+      ~noResultsFoundText: string=?,
+      ~openedOnEnter: bool=?,
+      ~selected: array(string)=?
+    ) =>
+    React.element =
+    "SelectMenu";
+};
+
+module SelectOption = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~ariaIsFavoriteLabel: string=?,
+      ~ariaIsNotFavoriteLabel: string=?,
+      ~className: string=?,
+      ~component: 'children1=?,
+      ~description: 'children2=?,
+      ~id: string=?,
+      ~index: int=?,
+      ~inputId: string=?,
+      ~isChecked: bool=?,
+      ~isDisabled: bool=?,
+      ~isFavorite: bool=?,
+      ~isFocused: bool=?,
+      ~isNoResultsOption: bool=?,
+      ~isPlaceholder: bool=?,
+      ~isSelected: bool=?,
+      ~value: string
+    ) =>
+    React.element =
+    "SelectOption";
+};
+
+module SelectToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~hasClearButton: bool=?,
+      ~id: string,
+      ~isActive: bool=?,
+      ~isDisabled: bool=?,
+      ~isOpen: bool=?,
+      ~isPlain: bool=?,
+      ~onClickTypeaheadToggleButton: unit => unit=?,
+      ~onClose: unit => unit=?,
+      ~onEnter: unit => unit=?,
+      ~onToggle: bool => unit=?,
+      ~_type: [@bs.string] [
+                | [@bs.as "reset"] `Reset
+                | [@bs.as "button"] `Button
+                | [@bs.as "submit"] `Submit
+                | [@bs.as "undefined"] `Undefined
+              ]
+                =?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "single"] `Single
+                  | [@bs.as "checkbox"] `Checkbox
+                  | [@bs.as "typeahead"] `Typeahead
+                  | [@bs.as "typeaheadmulti"] `Typeaheadmulti
+                ]
+                  =?
+    ) =>
+    React.element =
+    "SelectToggle";
+};
+
 module Spinner = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -1903,6 +2051,7 @@ module Tabs = {
       ~isVertical: bool=?,
       ~leftScrollAriaLabel: string=?,
       ~mountOnEnter: bool=?,
+      ~onSelect: unit => unit=?,
       ~rightScrollAriaLabel: string=?,
       ~unmountOnExit: bool=?,
       ~variant: [@bs.string] [

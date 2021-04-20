@@ -39,6 +39,7 @@ Components (generated from the typescript interfaces):
 - Nav
 - Page
 - Radio
+- Select
 - Spinner
 - Tabs
 - Text
@@ -134,6 +135,12 @@ Then build and run tests with `pnpm test`.
 Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
+
+
+### 2.0.2
+
+- Add Select
+- Add missing onSelect callback
 
 ### 2.0.1
 
