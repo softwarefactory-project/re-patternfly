@@ -234,6 +234,7 @@ module ApplicationLauncher = {
       ~isGrouped: bool=?,
       ~isOpen: bool=?,
       ~items: array('children)=?,
+      ~onFavorite: (string, bool) => unit=?,
       ~onSelect: unit => unit=?,
       ~onToggle: bool => unit=?,
       ~searchNoResultsText: string=?,
@@ -602,6 +603,7 @@ module ClipboardCopyButton = {
       ~exitDelay: int=?,
       ~id: string,
       ~maxWidth: string=?,
+      ~onClick: ReactEvent.Mouse.t => unit,
       ~position: [@bs.string] [
                    | [@bs.as "auto"] `Auto
                    | [@bs.as "top"] `Top
@@ -637,6 +639,7 @@ module ClipboardCopyToggle = {
       ~contentId: string,
       ~id: string,
       ~isExpanded: bool=?,
+      ~onClick: ReactEvent.Mouse.t => unit,
       ~textId: string
     ) =>
     React.element =
@@ -1415,6 +1418,7 @@ module Label = {
       ~icon: 'children3=?,
       ~isOverflowLabel: bool=?,
       ~isTruncated: bool=?,
+      ~onClose: ReactEvent.Mouse.t => unit=?,
       ~tooltipPosition: [@bs.string] [
                           | [@bs.as "auto"] `Auto
                           | [@bs.as "top"] `Top
@@ -1447,6 +1451,7 @@ module LabelGroup = {
       ~isClosable: bool=?,
       ~isVertical: bool=?,
       ~numLabels: int=?,
+      ~onClick: ReactEvent.Mouse.t => unit=?,
       ~tooltipPosition: [@bs.string] [
                           | [@bs.as "auto"] `Auto
                           | [@bs.as "top"] `Top
@@ -2026,6 +2031,10 @@ module Select = {
       ~isPlain: bool=?,
       ~maxHeight: string=?,
       ~noResultsFoundText: string=?,
+      ~onClear: ReactEvent.Mouse.t => unit=?,
+      ~onCreateOption: string => unit=?,
+      ~onFavorite: (string, bool) => unit=?,
+      ~onFilter: ReactEvent.Selection.t => array(React.element)=?,
       ~onSelect: (unit, string, bool) => unit=?,
       ~onToggle: bool => unit,
       ~placeholderText: string=?,

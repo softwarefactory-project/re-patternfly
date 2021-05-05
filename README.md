@@ -137,6 +137,9 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
 
+### 2.0.3
+
+- Add missing Select callback for typeahead multi selection
 
 ### 2.0.2
 
