@@ -1,6 +1,6 @@
 {
   "name": "@softwarefactory-project/re-patternfly",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "ReScript binding for Patternfly",
   "scripts": {
     "build": "bsb -make-world",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@glennsl/bs-jest": "^0.5.1",
-    "@patternfly/react-core": "^4.50.2",
+    "@patternfly/react-core": "^4.115.2",
     "bs-platform": "^8.4.0",
     "jest": "^26.5.0",
     "react": "^16.14.0",

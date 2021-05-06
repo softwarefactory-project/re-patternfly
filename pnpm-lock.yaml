@@ -2,7 +2,7 @@ dependencies:
   '@rescript/react': 0.10.1_048d2e292a4e229d8724998c112b8d7c
 devDependencies:
   '@glennsl/bs-jest': 0.5.1
-  '@patternfly/react-core': 4.90.2_react-dom@16.14.0+react@16.14.0
+  '@patternfly/react-core': 4.115.2_react-dom@16.14.0+react@16.14.0
   bs-platform: 8.4.2
   jest: 26.6.3
   react: 16.14.0
@@ -680,11 +680,11 @@ packages:
       node: '>= 10.14.2'
     resolution:
       integrity: sha512-fC6QCp7Sc5sX6g8Tvbmj4XUTbyrik0akgRy03yjXbQaBWWNWGE7SGtJk98m0N8nzegD/7SggrUlivxo5ax4KWQ==
-  /@patternfly/react-core/4.90.2_react-dom@16.14.0+react@16.14.0:
+  /@patternfly/react-core/4.115.2_react-dom@16.14.0+react@16.14.0:
     dependencies:
-      '@patternfly/react-icons': 4.8.4_react-dom@16.14.0+react@16.14.0
-      '@patternfly/react-styles': 4.7.29
-      '@patternfly/react-tokens': 4.9.26
+      '@patternfly/react-icons': 4.10.2_react-dom@16.14.0+react@16.14.0
+      '@patternfly/react-styles': 4.10.2
+      '@patternfly/react-tokens': 4.11.3
       focus-trap: 6.2.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -696,8 +696,8 @@ packages:
       react: ^16.8.0 || ^17.0.0
       react-dom: ^16.8.0 || ^17.0.0
     resolution:
-      integrity: sha512-Ld4HCXYrVZR+ycWKvygmOEDyyMpb/pfZFklJiT/9ktSSSU9SfKwH2XmXotgjwBy1lYUoRYJ58xTpV19duouEoA==
-  /@patternfly/react-icons/4.8.4_react-dom@16.14.0+react@16.14.0:
+      integrity: sha512-lnA+WmTQ0IyJIuSSUH0mjMUujAb6sYGNFMwkGDy4BpJjeu0aredVEmM0kAe/rFAurjSen/JpOhET2V3NiMGKtA==
+  /@patternfly/react-icons/4.10.2_react-dom@16.14.0+react@16.14.0:
     dependencies:
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -706,15 +706,15 @@ packages:
       react: ^16.8.0 || ^17.0.0
       react-dom: ^16.8.0 || ^17.0.0
     resolution:
-      integrity: sha512-nGrZ6F57drim7t5FlFz7YusHVs8xngiayB20oSsJeewppOZ3vJDVhHaiJjsIRMB9PcVOY99QT2wnyiY1eYPVyA==
-  /@patternfly/react-styles/4.7.29:
+      integrity: sha512-mSkBRaEFukpaAoLDyd3nI+6Cj0z2/5DgJTA2i7By/UW1wJifKnBWW8NRO2SsJQVQIUtuuAunjUrjzKHdcxs5IQ==
+  /@patternfly/react-styles/4.10.2:
     dev: true
     resolution:
-      integrity: sha512-eAO9xh2+IQHIBCihmwNuDVCeAWhGXIhbUNJEwZzvevYuH4Pnl0X8YaWoYmM2ZfL8ZdagRTLvjGW+hoZGkUyCBQ==
-  /@patternfly/react-tokens/4.9.26:
+      integrity: sha512-cGvDFAISGrt+RAkX5NVyILCjWV1l9PCUpnMq6v4/6jBJOEHTBnRjaIGa92dw3OrLh407cBOIC0ugweRnocRmPw==
+  /@patternfly/react-tokens/4.11.3:
     dev: true
     resolution:
-      integrity: sha512-SSbY6BaUb7ycXhvdBNk2yzOlteRUHnchHSYPBFvhUk+SqpsjQ7j13/ZTok6pcHXrcj3FaL9f82/ep4eTXPzmWg==
+      integrity: sha512-7VbmT+aOwxk1DYzwer+wZgcbvkSsUUTKMKJDzhMvm5xi9nDeW8qI7laxQbWC9PDfsI5tiPxI2+BSuHnZpV/eRg==
   /@rescript/react/0.10.1_048d2e292a4e229d8724998c112b8d7c:
     dependencies:
       bs-platform: 8.4.2
@@ -1413,7 +1413,7 @@ packages:
     resolution:
       integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
   /core-js/2.6.12:
-    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
+    deprecated: core-js@<3.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Please, upgrade your dependencies to the actual version of core-js.
     dev: true
     requiresBuild: true
     resolution:
@@ -3811,7 +3811,7 @@ packages:
     resolution:
       integrity: sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
   /popper.js/1.16.1:
-    deprecated: 'You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1'
+    deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
     dev: true
     resolution:
       integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
@@ -4012,7 +4012,7 @@ packages:
       request-promise-core: 1.1.4_request@2.88.2
       stealthy-require: 1.1.1
       tough-cookie: 2.5.0
-    deprecated: 'request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142'
+    deprecated: request-promise-native has been deprecated because it extends the now deprecated request package, see https://github.com/request/request/issues/3142
     dev: true
     engines:
       node: '>=0.12.0'
@@ -4042,7 +4042,7 @@ packages:
       tough-cookie: 2.5.0
       tunnel-agent: 0.6.0
       uuid: 3.4.0
-    deprecated: 'request has been deprecated, see https://github.com/request/request/issues/3142'
+    deprecated: request has been deprecated, see https://github.com/request/request/issues/3142
     dev: true
     engines:
       node: '>= 6'
@@ -4073,7 +4073,7 @@ packages:
     resolution:
       integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
   /resolve-url/0.2.1:
-    deprecated: 'https://github.com/lydell/resolve-url#deprecated'
+    deprecated: https://github.com/lydell/resolve-url#deprecated
     dev: true
     resolution:
       integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
@@ -4686,7 +4686,7 @@ packages:
     resolution:
       integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   /urix/0.1.0:
-    deprecated: 'Please see https://github.com/lydell/urix#deprecated'
+    deprecated: Please see https://github.com/lydell/urix#deprecated
     dev: true
     resolution:
       integrity: sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
@@ -4930,9 +4930,9 @@ packages:
       integrity: sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A==
 specifiers:
   '@glennsl/bs-jest': ^0.5.1
-  '@patternfly/react-core': ^4.50.2
+  '@patternfly/react-core': ^4.115.2
   '@rescript/react': ^0.10.1
   bs-platform: ^8.4.0
   jest: ^26.5.0
-  react: ^16.13.1
-  react-dom: ^16.13.1
+  react: ^16.14.0
+  react-dom: ^16.14.0

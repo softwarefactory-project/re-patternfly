@@ -155,6 +155,7 @@ module Alert = {
       ~isInline: bool=?,
       ~isLiveRegion: bool=?,
       ~onTimeout: unit => unit=?,
+      ~timeoutAnimation: int=?,
       ~title: 'children4,
       ~tooltipPosition: [@bs.string] [
                           | [@bs.as "auto"] `Auto
@@ -378,6 +379,7 @@ module BreadcrumbItem = {
       ~className: string=?,
       ~component: React.element=?,
       ~isActive: bool=?,
+      ~isDropdown: bool=?,
       ~showDivider: bool=?,
       ~target: string=?,
       ~_to: string=?
@@ -443,7 +445,11 @@ module Card = {
       ~isCompact: bool=?,
       ~isExpanded: bool=?,
       ~isFlat: bool=?,
+      ~isFullHeight: bool=?,
       ~isHoverable: bool=?,
+      ~isLarge: bool=?,
+      ~isPlain: bool=?,
+      ~isRounded: bool=?,
       ~isSelectable: bool=?,
       ~isSelected: bool=?,
       ~onClick: ReactEvent.Mouse.t => unit=?,
@@ -557,14 +563,15 @@ module Checkbox = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~body: 'children=?,
       ~checked: bool=?,
       ~className: string=?,
-      ~description: 'children=?,
+      ~description: 'children1=?,
       ~id: string,
       ~isChecked: bool=?,
       ~isDisabled: bool=?,
       ~isValid: bool=?,
-      ~label: 'children1=?,
+      ~label: 'children2=?,
       ~onChange: (bool, ReactEvent.Mouse.t) => unit=?
     ) =>
     React.element =
@@ -576,11 +583,13 @@ module ClipboardCopy = {
   external make:
     (
       ~children: 'children,
+      ~additionalActions: 'children1=?,
       ~className: string=?,
       ~clickTip: string=?,
       ~entryDelay: int=?,
       ~exitDelay: int=?,
       ~hoverTip: string=?,
+      ~isBlock: bool=?,
       ~isCode: bool=?,
       ~isExpanded: bool=?,
       ~isReadOnly: bool=?,
@@ -591,6 +600,13 @@ module ClipboardCopy = {
     ) =>
     React.element =
     "ClipboardCopy";
+};
+
+module ClipboardCopyAction = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "ClipboardCopyAction";
 };
 
 module ClipboardCopyButton = {
@@ -612,7 +628,12 @@ module ClipboardCopyButton = {
                    | [@bs.as "right"] `Right
                  ]
                    =?,
-      ~textId: string
+      ~textId: string,
+      ~variant: [@bs.string] [
+                  | [@bs.as "control"] `Control
+                  | [@bs.as "plain"] `Plain
+                ]
+                  =?
     ) =>
     React.element =
     "ClipboardCopyButton";
@@ -947,6 +968,11 @@ module DrawerContent = {
     (
       ~children: 'children=?,
       ~className: string=?,
+      ~colorVariant: [@bs.string] [
+                       | [@bs.as "light-200"] `Light200
+                       | [@bs.as "default"] `Default
+                     ]
+                       =?,
       ~panelContent: 'children1
     ) =>
     React.element =
@@ -990,11 +1016,13 @@ module DrawerPanelContent = {
     (
       ~children: 'children=?,
       ~className: string=?,
+      ~defaultSize: string=?,
       ~hasNoBorder: bool=?,
+      ~id: string=?,
       ~increment: int=?,
       ~isResizable: bool=?,
-      ~maxSize: int=?,
-      ~minSize: int=?,
+      ~maxSize: string=?,
+      ~minSize: string=?,
       ~resizeAriaDescribedBy: string=?,
       ~resizeAriaLabel: string=?,
       ~widths: 'any1=?
@@ -1006,8 +1034,43 @@ module DrawerPanelContent = {
 module DrawerSection = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~children: 'children=?, ~className: string=?) => React.element =
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~colorVariant: [@bs.string] [
+                       | [@bs.as "light-200"] `Light200
+                       | [@bs.as "default"] `Default
+                     ]
+                       =?
+    ) =>
+    React.element =
     "DrawerSection";
+};
+
+module BadgeToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~badgeProps: 'any1=?,
+      ~bubbleEvent: bool=?,
+      ~className: string=?,
+      ~id: string=?,
+      ~isActive: bool=?,
+      ~isDisabled: bool=?,
+      ~isOpen: bool=?,
+      ~isPlain: bool=?,
+      ~onToggle: bool => unit=?,
+      ~parentRef: 'any2=?,
+      ~_type: [@bs.string] [
+                | [@bs.as "button"] `Button
+                | [@bs.as "submit"] `Submit
+                | [@bs.as "reset"] `Reset
+              ]
+                =?
+    ) =>
+    React.element =
+    "BadgeToggle";
 };
 
 module Dropdown = {
@@ -1045,6 +1108,7 @@ module DropdownItem = {
       ~autoFocus: bool=?,
       ~className: string=?,
       ~component: 'children2=?,
+      ~componentID: string=?,
       ~customChild: 'children3=?,
       ~description: 'children4=?,
       ~href: string=?,
@@ -1303,6 +1367,54 @@ module FormAlert = {
     "FormAlert";
 };
 
+module FormFieldGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~header: 'children1=?) =>
+    React.element =
+    "FormFieldGroup";
+};
+
+module FormFieldGroupExpandable = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~header: 'children1=?,
+      ~isExpanded: bool=?,
+      ~toggleAriaLabel: string=?
+    ) =>
+    React.element =
+    "FormFieldGroupExpandable";
+};
+
+module FormFieldGroupHeader = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~actions: 'children=?,
+      ~className: string=?,
+      ~titleDescription: 'children1=?,
+      ~titleText: string=?
+    ) =>
+    React.element =
+    "FormFieldGroupHeader";
+};
+
+module FormFieldGroupToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~isExpanded: bool,
+      ~onToggle: unit => unit,
+      ~toggleId: string=?
+    ) =>
+    React.element =
+    "FormFieldGroupToggle";
+};
+
 module FormGroup = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
@@ -1318,6 +1430,7 @@ module FormGroup = {
       ~isHelperTextBeforeField: bool=?,
       ~isInline: bool=?,
       ~isRequired: bool=?,
+      ~isStack: bool=?,
       ~label: 'children5=?,
       ~labelIcon: React.element=?,
       ~validated: [@bs.string] [
@@ -1349,8 +1462,39 @@ module FormHelperText = {
 module FormSection = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
-    (~children: 'children=?, ~className: string=?) => React.element =
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~title: 'children1=?,
+      ~titleElement: [@bs.string] [
+                       | [@bs.as "div"] `Div
+                       | [@bs.as "h1"] `H1
+                       | [@bs.as "h2"] `H2
+                       | [@bs.as "h3"] `H3
+                       | [@bs.as "h4"] `H4
+                       | [@bs.as "h5"] `H5
+                       | [@bs.as "h6"] `H6
+                     ]
+                       =?
+    ) =>
+    React.element =
     "FormSection";
+};
+
+module InternalFormFieldGroup = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~header: 'any1=?,
+      ~isExpandable: bool=?,
+      ~isExpanded: bool=?,
+      ~onToggle: unit => unit=?,
+      ~toggleAriaLabel: string=?
+    ) =>
+    React.element =
+    "InternalFormFieldGroup";
 };
 
 module Hint = {
@@ -1525,8 +1669,10 @@ module LoginForm = {
       ~className: string=?,
       ~helperText: 'children=?,
       ~helperTextIcon: 'children1=?,
+      ~hidePasswordAriaLabel: string=?,
       ~isLoginButtonDisabled: bool=?,
       ~isRememberMeChecked: bool=?,
+      ~isShowPasswordEnabled: bool=?,
       ~isValidPassword: bool=?,
       ~isValidUsername: bool=?,
       ~loginButtonLabel: string=?,
@@ -1539,6 +1685,7 @@ module LoginForm = {
       ~passwordValue: string=?,
       ~rememberMeLabel: string=?,
       ~showHelperText: bool=?,
+      ~showPasswordAriaLabel: string=?,
       ~usernameLabel: string=?,
       ~usernameValue: string=?
     ) =>
@@ -1637,24 +1784,47 @@ module LoginPage = {
     "LoginPage";
 };
 
+module DrilldownMenu = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~id: string=?, ~isMenuDrilledIn: bool=?) =>
+    React.element =
+    "DrilldownMenu";
+};
+
 module Menu = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
       ~children: 'children=?,
-      ~activeItemId: 'any1=?,
+      ~activeItemId: string=?,
+      ~activeMenu: string=?,
       ~className: string=?,
+      ~containsDrilldown: bool=?,
       ~containsFlyout: bool=?,
+      ~drilldownItemPath: array(string)=?,
+      ~drilledInMenus: array(string)=?,
       ~hasSearchInput: bool=?,
-      ~onSelect: unit => unit=?
+      ~id: string=?,
+      ~isMenuDrilledIn: bool=?,
+      ~isRootMenu: bool=?,
+      ~onSelect: unit => unit=?,
+      ~parentMenu: string=?
     ) =>
     React.element =
     "Menu";
 };
 
+module MenuBreadcrumb = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~children: 'children=?) => React.element = "MenuBreadcrumb";
+};
+
 module MenuContent = {
   [@react.component] [@bs.module "@patternfly/react-core"]
-  external make: (~children: 'children=?) => React.element = "MenuContent";
+  external make:
+    (~children: 'children=?, ~menuHeight: string=?) => React.element =
+    "MenuContent";
 };
 
 module MenuGroup = {
@@ -1684,14 +1854,17 @@ module MenuItem = {
       ~className: string=?,
       ~component: 'children2=?,
       ~description: 'children3=?,
-      ~flyoutMenu: 'children4=?,
-      ~icon: 'children5=?,
+      ~direction: [@bs.string] [ | [@bs.as "down"] `Down | [@bs.as "up"] `Up]=?,
+      ~drilldownMenu: 'children4=?,
+      ~flyoutMenu: 'children5=?,
+      ~icon: 'children6=?,
       ~isActive: bool=?,
       ~isDisabled: bool=?,
       ~isExternalLink: bool=?,
       ~isFavorited: bool=?,
+      ~isOnPath: bool=?,
       ~isSelected: bool=?,
-      ~itemId: 'any6=?,
+      ~itemId: 'any7=?,
       ~_to: string=?
     ) =>
     React.element =
@@ -1730,6 +1903,7 @@ module NavExpandable = {
   external make:
     (
       ~children: 'children=?,
+      ~buttonProps: 'any1=?,
       ~className: string=?,
       ~groupId: string=?,
       ~id: string=?,
@@ -1956,6 +2130,7 @@ module PageSection = {
       ~_type: [@bs.string] [
                 | [@bs.as "default"] `Default
                 | [@bs.as "nav"] `Nav
+                | [@bs.as "wizard"] `Wizard
               ]
                 =?,
       ~variant: [@bs.string] [
@@ -1968,6 +2143,11 @@ module PageSection = {
     ) =>
     React.element =
     "PageSection";
+};
+
+module PageSidebarContext = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make: (~isNavOpen: bool) => React.element = "PageSidebarContext";
 };
 
 module PageSidebar = {
@@ -1989,16 +2169,17 @@ module Radio = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~body: 'children=?,
       ~checked: bool=?,
       ~className: string=?,
-      ~description: 'children=?,
+      ~description: 'children1=?,
       ~id: string,
       ~isChecked: bool=?,
       ~isDisabled: bool=?,
       ~isLabelBeforeButton: bool=?,
       ~isLabelWrapped: bool=?,
       ~isValid: bool=?,
-      ~label: 'children1=?,
+      ~label: 'children2=?,
       ~name: string,
       ~onChange: (bool, ReactEvent.Mouse.t) => unit=?
     ) =>
@@ -2034,9 +2215,10 @@ module Select = {
       ~onClear: ReactEvent.Mouse.t => unit=?,
       ~onCreateOption: string => unit=?,
       ~onFavorite: (string, bool) => unit=?,
-      ~onFilter: ReactEvent.Selection.t => array(React.element)=?,
+      ~onFilter: (ReactEvent.Selection.t, string) => array(React.element)=?,
       ~onSelect: (unit, string, bool) => unit=?,
       ~onToggle: bool => unit,
+      ~onTypeaheadInputChanged: string => unit=?,
       ~placeholderText: string=?,
       ~removeSelectionAriaLabel: string=?,
       ~selections: array(string)=?,
@@ -2044,6 +2226,13 @@ module Select = {
       ~toggleIcon: React.element=?,
       ~toggleId: string=?,
       ~typeAheadAriaLabel: string=?,
+      ~validated: [@bs.string] [
+                    | [@bs.as "success"] `Success
+                    | [@bs.as "warning"] `Warning
+                    | [@bs.as "error"] `Error
+                    | [@bs.as "default"] `Default
+                  ]
+                    =?,
       ~variant: [@bs.string] [
                   | [@bs.as "single"] `Single
                   | [@bs.as "checkbox"] `Checkbox
@@ -2110,6 +2299,7 @@ module SelectOption = {
       ~isNoResultsOption: bool=?,
       ~isPlaceholder: bool=?,
       ~isSelected: bool=?,
+      ~itemCount: int=?,
       ~value: string
     ) =>
     React.element =
@@ -2156,6 +2346,8 @@ module Spinner = {
   external make:
     (
       ~className: string=?,
+      ~diameter: string=?,
+      ~isSVG: bool=?,
       ~size: [@bs.string] [
                | [@bs.as "sm"] `Sm
                | [@bs.as "md"] `Md
@@ -2318,6 +2510,7 @@ module TextArea = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
     (
+      ~autoResize: bool=?,
       ~className: string=?,
       ~isDisabled: bool=?,
       ~isReadOnly: bool=?,
@@ -2540,7 +2733,8 @@ module ToolbarItem = {
                   | [@bs.as "expand-all"] `Expandall
                 ]
                   =?,
-      ~visibility: 'any3=?
+      ~visibility: 'any3=?,
+      ~widths: 'any5=?
     ) =>
     React.element =
     "ToolbarItem";
