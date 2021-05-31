@@ -137,6 +137,10 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
 
+### 2.1.1
+
+- Add Flex layout
+
 ### 2.1.0
 
 - Update @patternfly/react-core version to 4.115.2

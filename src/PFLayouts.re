@@ -5,6 +5,49 @@ module Bullseye = {
     "Bullseye";
 };
 
+module Flex = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~align: 'any1=?,
+      ~alignContent: 'any2=?,
+      ~alignItems: 'any3=?,
+      ~alignSelf: 'any4=?,
+      ~className: string=?,
+      ~direction: 'any5=?,
+      ~display: 'any6=?,
+      ~flex: 'any7=?,
+      ~flexWrap: 'any8=?,
+      ~fullWidth: 'any9=?,
+      ~grow: 'any10=?,
+      ~justifyContent: 'any11=?,
+      ~shrink: 'any12=?,
+      ~spaceItems: 'any13=?,
+      ~spacer: 'any14=?
+    ) =>
+    React.element =
+    "Flex";
+};
+
+module FlexItem = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~align: 'any1=?,
+      ~alignSelf: 'any2=?,
+      ~className: string=?,
+      ~flex: 'any3=?,
+      ~fullWidth: 'any4=?,
+      ~grow: 'any5=?,
+      ~shrink: 'any6=?,
+      ~spacer: 'any7=?
+    ) =>
+    React.element =
+    "FlexItem";
+};
+
 module Gallery = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:
