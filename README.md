@@ -37,6 +37,7 @@ Components (generated from the typescript interfaces):
 - List
 - LoginPage
 - Menu
+- Modal
 - Nav
 - Page
 - Radio
@@ -54,6 +55,7 @@ Components (generated from the typescript interfaces):
 Layouts:
 
 - Bullseye
+- Flex
 - Gallery
 - Grid
 - Level
@@ -140,6 +142,7 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 ### 2.1.1
 
 - Add Flex layout
+- Add Modal component
 
 ### 2.1.0
 

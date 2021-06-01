@@ -1871,10 +1871,188 @@ module MenuItem = {
     "MenuItem";
 };
 
+module MenuItemAction = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~actionId: 'any=?,
+      ~className: string=?,
+      ~icon: [@bs.string] [ | [@bs.as "favorites"] `Favorites]=?,
+      ~isDisabled: bool=?,
+      ~isFavorited: bool=?
+    ) =>
+    React.element =
+    "MenuItemAction";
+};
+
 module MenuList = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make: (~children: 'children, ~className: string=?) => React.element =
     "MenuList";
+};
+
+module Modal = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~actions: 'any1=?,
+      ~className: string=?,
+      ~description: 'children2=?,
+      ~disableFocusTrap: bool=?,
+      ~footer: 'children3=?,
+      ~hasNoBodyWrapper: bool=?,
+      ~header: 'children4=?,
+      ~help: 'children5=?,
+      ~id: string=?,
+      ~isOpen: bool=?,
+      ~onClose: unit => unit=?,
+      ~position: [@bs.string] [ | [@bs.as "top"] `Top]=?,
+      ~positionOffset: string=?,
+      ~showClose: bool=?,
+      ~title: string=?,
+      ~titleIconVariant: [@bs.string] [
+                           | [@bs.as "success"] `Success
+                           | [@bs.as "danger"] `Danger
+                           | [@bs.as "warning"] `Warning
+                           | [@bs.as "info"] `Info
+                           | [@bs.as "default"] `Default
+                         ]
+                           =?,
+      ~titleLabel: string=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "small"] `Small
+                  | [@bs.as "medium"] `Medium
+                  | [@bs.as "large"] `Large
+                  | [@bs.as "default"] `Default
+                ]
+                  =?,
+      ~width: string=?
+    ) =>
+    React.element =
+    "Modal";
+};
+
+module ModalBox = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~className: string=?,
+      ~position: [@bs.string] [ | [@bs.as "top"] `Top]=?,
+      ~positionOffset: string=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "small"] `Small
+                  | [@bs.as "medium"] `Medium
+                  | [@bs.as "large"] `Large
+                  | [@bs.as "default"] `Default
+                ]
+                  =?
+    ) =>
+    React.element =
+    "ModalBox";
+};
+
+module ModalBoxBody = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "ModalBoxBody";
+};
+
+module ModalBoxCloseButton = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~className: string=?, ~onClose: unit => unit=?) => React.element =
+    "ModalBoxCloseButton";
+};
+
+module ModalBoxDescription = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~id: string=?) =>
+    React.element =
+    "ModalBoxDescription";
+};
+
+module ModalBoxFooter = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?) => React.element =
+    "ModalBoxFooter";
+};
+
+module ModalBoxHeader = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (~children: 'children=?, ~className: string=?, ~help: 'children1=?) =>
+    React.element =
+    "ModalBoxHeader";
+};
+
+module ModalBoxTitle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~id: string,
+      ~title: 'children,
+      ~titleIconVariant: [@bs.string] [
+                           | [@bs.as "success"] `Success
+                           | [@bs.as "danger"] `Danger
+                           | [@bs.as "warning"] `Warning
+                           | [@bs.as "info"] `Info
+                           | [@bs.as "default"] `Default
+                         ]
+                           =?,
+      ~titleLabel: string=?
+    ) =>
+    React.element =
+    "ModalBoxTitle";
+};
+
+module ModalContent = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children,
+      ~actions: 'any1=?,
+      ~boxId: string,
+      ~className: string=?,
+      ~description: 'children2=?,
+      ~descriptorId: string,
+      ~disableFocusTrap: bool=?,
+      ~footer: 'children3=?,
+      ~hasNoBodyWrapper: bool=?,
+      ~header: 'children4=?,
+      ~help: 'children5=?,
+      ~isOpen: bool=?,
+      ~labelId: string,
+      ~onClose: unit => unit=?,
+      ~position: [@bs.string] [ | [@bs.as "top"] `Top]=?,
+      ~positionOffset: string=?,
+      ~showClose: bool=?,
+      ~title: string=?,
+      ~titleIconVariant: [@bs.string] [
+                           | [@bs.as "success"] `Success
+                           | [@bs.as "danger"] `Danger
+                           | [@bs.as "warning"] `Warning
+                           | [@bs.as "info"] `Info
+                           | [@bs.as "default"] `Default
+                         ]
+                           =?,
+      ~titleLabel: string=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "small"] `Small
+                  | [@bs.as "medium"] `Medium
+                  | [@bs.as "large"] `Large
+                  | [@bs.as "default"] `Default
+                ]
+                  =?,
+      ~width: string=?
+    ) =>
+    React.element =
+    "ModalContent";
 };
 
 module Nav = {
