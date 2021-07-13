@@ -139,6 +139,10 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
 
+### 2.2.0
+
+- Add onSort and sortBy Table properties
+
 ### 2.1.1
 
 - Add Flex layout

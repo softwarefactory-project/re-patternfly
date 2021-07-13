@@ -30,13 +30,21 @@ type pfcells = array(pfCell);
 [@bs.module "@patternfly/react-table"] [@bs.val]
 external sortable: transformers = "sortable";
 
+type sortByDirection = [ | `asc | `desc];
+
+type sortBy = {
+  index: int,
+  direction: sortByDirection,
+};
+
 module Table = {
   [@react.component] [@bs.module "@patternfly/react-table"]
   external make:
     (
       ~rows: pfrows,
       ~cells: pfcells,
-      ~onSort: ReactEvent.Mouse.t => unit=?,
+      ~sortBy: sortBy,
+      ~onSort: (ReactEvent.Mouse.t, int, sortByDirection) => unit=?,
       ~caption: string=?,
       ~children: 'children=?
     ) =>
