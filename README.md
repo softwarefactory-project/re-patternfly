@@ -139,6 +139,10 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
 
+### 3.0.0
+
+- Update Table pfRow property to support custom formatter
+
 ### 2.2.0
 
 - Add onSort and sortBy Table properties

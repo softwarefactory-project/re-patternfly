@@ -1,36 +1,46 @@
 open Patternfly
 
+module Build = {
+  type t = {job: string, result: string, count: int}
+  let samples = list{
+    {job: "rpmbuild", result: "success", count: 42},
+    {job: "rpmtest", result: "failure", count: 13},
+    {job: "noop", result: "error", count: 100},
+  }
+}
+
 module SortableTable = {
   @react.component
   let make = () => {
     let columns = [
       {title: "job", transforms: [sortable]},
       {title: "result", transforms: [sortable]},
+      {title: "count", transforms: [sortable]},
     ]
+    let isOrdered = (first: Build.t, second: Build.t, index) =>
+      switch index {
+      | 0 => first.job < second.job
+      | 1 => first.result < second.result
+      | 2 => first.count < second.count
+      | _ => false
+      }
     let (sortBy, setSortBy) = React.useState(_ => {index: 0, direction: #desc})
-    let (rows, setRows) = React.useState(_ => [
-      {cells: ["rpmbuild", "success"]},
-      {cells: ["rpmtest", "failure"]},
-      {cells: ["noop", "error"]},
-    ])
-    let doSort = (index, direction) => {
-      setRows(_ =>
-        rows |> Js.Array.sortInPlaceWith((a, b) => {
-          let (first, second) = switch direction {
-          | #desc => (a.cells[index], b.cells[index])
-          | #asc => (b.cells[index], a.cells[index])
-          }
-          first < second ? -1 : first == second ? 0 : 1
-        })
-      )
-    }
+
+    let jobFormatter = (build: Build.t) => build.job->React.string
+    let resultFormatter = (build: Build.t) => build.result->React.string
+    let countFormatter = (build: Build.t) => build.count->string_of_int->React.string
+    let formatters = list{jobFormatter, resultFormatter, countFormatter}
+
+    let (rows, setRows) = React.useState(_ => Build.samples->mkRows(formatters))
+
+    let doSort = (index, direction) => setRows(_ => rows->sortRows(isOrdered, index, direction))
+
     let onSort = (_, index, direction) => {
       setSortBy(_ => {index: index, direction: direction})
       doSort(index, direction)
     }
     React.useEffect0(() => {
-      doSort(0, #desc)
-      setSortBy(_ => {index: 0, direction: #desc})
+      doSort(sortBy.index, sortBy.direction)
       None
     })
     <Table caption="Sortable Table" rows cells=columns sortBy onSort>

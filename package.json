@@ -1,6 +1,6 @@
 {
   "name": "@softwarefactory-project/re-patternfly",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "ReScript binding for Patternfly",
   "scripts": {
     "build": "bsb -make-world",
