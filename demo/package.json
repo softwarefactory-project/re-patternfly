@@ -16,6 +16,9 @@
     "rescript"
   ],
   "license": "Apache-2.0",
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
   "dependencies": {
     "@patternfly/react-core": "^4.115.2",
     "@patternfly/react-icons": "^4.7.12",
