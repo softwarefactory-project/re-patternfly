@@ -43,7 +43,7 @@ module SortableTable = {
       doSort(sortBy.index, sortBy.direction)
       None
     })
-    <Table caption="Sortable Table" rows cells=columns sortBy onSort>
+    <Table caption="Sortable Table" rows variant=#compact cells=columns sortBy onSort>
       <TableHeader /> <TableBody />
     </Table>
   }

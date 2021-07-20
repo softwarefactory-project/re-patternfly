@@ -139,6 +139,10 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
 
+### 3.0.1
+
+- Add variant property to Table component
+
 ### 3.0.0
 
 - Update Table pfRow property to support custom formatter

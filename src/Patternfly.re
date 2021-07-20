@@ -58,6 +58,8 @@ external sortable: transformers = "sortable";
 
 type sortByDirection = [ | `asc | `desc];
 
+type variantType = [ | `compact | `default];
+
 type sortBy = {
   index: int,
   direction: sortByDirection,
@@ -89,6 +91,7 @@ module Table = {
       ~sortBy: sortBy,
       ~onSort: (ReactEvent.Mouse.t, int, sortByDirection) => unit=?,
       ~caption: string=?,
+      ~variant: variantType=?,
       ~children: 'children=?
     ) =>
     React.element =
