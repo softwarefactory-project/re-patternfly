@@ -2343,6 +2343,132 @@ module PageSidebar = {
     "PageSidebar";
 };
 
+module Navigation = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~currPage: string=?,
+      ~firstPage: int=?,
+      ~isCompact: bool=?,
+      ~isDisabled: bool=?,
+      ~lastPage: int=?,
+      ~ofWord: string=?,
+      ~onSetPage: (ReactEvent.Mouse.t, int, int, int, int) => unit,
+      ~page: React.element,
+      ~pagesTitle: string=?,
+      ~paginationTitle: string=?,
+      ~perPage: int=?,
+      ~toFirstPage: string=?,
+      ~toLastPage: string=?,
+      ~toNextPage: string=?,
+      ~toPreviousPage: string=?
+    ) =>
+    React.element =
+    "Navigation";
+};
+
+module OptionsToggle = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~firstIndex: int=?,
+      ~isDisabled: bool=?,
+      ~isOpen: bool=?,
+      ~itemCount: int=?,
+      ~itemsPerPageTitle: string=?,
+      ~itemsTitle: string=?,
+      ~lastIndex: int=?,
+      ~onEnter: unit => unit=?,
+      ~onToggle: bool => unit=?,
+      ~optionsToggle: string=?,
+      ~showToggle: bool=?,
+      ~widgetId: string=?
+    ) =>
+    React.element =
+    "OptionsToggle";
+};
+
+module Pagination = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~children: 'children=?,
+      ~className: string=?,
+      ~defaultToFullPage: bool=?,
+      ~dropDirection: [@bs.string] [
+                        | [@bs.as "up"] `Up
+                        | [@bs.as "down"] `Down
+                      ]
+                        =?,
+      ~firstPage: int=?,
+      ~isCompact: bool=?,
+      ~isDisabled: bool=?,
+      ~isStatic: bool=?,
+      ~isSticky: bool=?,
+      ~itemCount: int,
+      ~itemsEnd: int=?,
+      ~itemsStart: int=?,
+      ~offset: int=?,
+      ~onPerPageSelect: (ReactEvent.Mouse.t, int, int, int, int) => unit=?,
+      ~onSetPage: (ReactEvent.Mouse.t, int, int, int, int) => unit=?,
+      ~page: int=?,
+      ~perPage: int=?,
+      ~variant: [@bs.string] [
+                  | [@bs.as "top"] `Top
+                  | [@bs.as "bottom"] `Bottom
+                  | [@bs.as "PaginationVariant"] `PaginationVariant
+                ]
+                  =?,
+      ~widgetId: string=?
+    ) =>
+    React.element =
+    "Pagination";
+};
+
+module PaginationOptionsMenu = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~className: string=?,
+      ~defaultToFullPage: bool=?,
+      ~dropDirection: [@bs.string] [
+                        | [@bs.as "up"] `Up
+                        | [@bs.as "down"] `Down
+                      ]
+                        =?,
+      ~firstIndex: int=?,
+      ~isDisabled: bool=?,
+      ~itemCount: int=?,
+      ~itemsPerPageTitle: string=?,
+      ~itemsTitle: string=?,
+      ~lastIndex: int=?,
+      ~lastPage: int=?,
+      ~onPerPageSelect: (ReactEvent.Mouse.t, int, int, int, int) => unit=?,
+      ~optionsToggle: string=?,
+      ~page: int=?,
+      ~perPage: int=?,
+      ~perPageSuffix: string=?,
+      ~widgetId: string=?
+    ) =>
+    React.element =
+    "PaginationOptionsMenu";
+};
+
+module ToggleTemplate = {
+  [@react.component] [@bs.module "@patternfly/react-core"]
+  external make:
+    (
+      ~firstIndex: int=?,
+      ~itemCount: int=?,
+      ~itemsTitle: string=?,
+      ~lastIndex: int=?,
+      ~ofWord: 'children=?
+    ) =>
+    React.element =
+    "ToggleTemplate";
+};
+
 module Radio = {
   [@react.component] [@bs.module "@patternfly/react-core"]
   external make:

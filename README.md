@@ -40,6 +40,7 @@ Components (generated from the typescript interfaces):
 - Modal
 - Nav
 - Page
+- Pagination
 - Radio
 - Select
 - Spinner
@@ -138,6 +139,10 @@ Then build and run tests with `pnpm test`.
 Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
+
+### 3.0.2
+
+- Add Pagination components
 
 ### 3.0.1
 
