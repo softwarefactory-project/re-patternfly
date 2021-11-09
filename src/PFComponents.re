@@ -155,6 +155,7 @@ module Alert = {
       ~isInline: bool=?,
       ~isLiveRegion: bool=?,
       ~onTimeout: unit => unit=?,
+      ~timeout: int=?,
       ~timeoutAnimation: int=?,
       ~title: 'children4,
       ~tooltipPosition: [@bs.string] [

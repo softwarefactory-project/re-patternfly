@@ -140,6 +140,10 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
 
+### 3.0.3
+
+- Add missing timeout property for Alert
+
 ### 3.0.2
 
 - Add Pagination components
