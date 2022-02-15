@@ -140,6 +140,10 @@ Make sure to read about [React][reason-react] and [ReScript][rescript-lang] too.
 
 ## Changes
 
+### 3.0.4
+
+- Fix wrong onSelect attribute for Tabs component
+
 ### 3.0.3
 
 - Add missing timeout property for Alert

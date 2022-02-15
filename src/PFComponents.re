@@ -2732,7 +2732,7 @@ module Tabs = {
       ~isVertical: bool=?,
       ~leftScrollAriaLabel: string=?,
       ~mountOnEnter: bool=?,
-      ~onSelect: unit => unit=?,
+      ~onSelect: (unit, string) => unit=?,
       ~rightScrollAriaLabel: string=?,
       ~unmountOnExit: bool=?,
       ~variant: [@bs.string] [
